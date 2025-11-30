@@ -27,6 +27,40 @@ body {
   line-height: 1.6;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  height: 48px;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 18px;
+}
+
+.navbar nav a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a:focus-visible,
+.navbar nav a.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 /* CONTAINER */
 .container {
   max-width: 1200px;
@@ -91,6 +125,11 @@ body {
   padding: 140px 0;
   background: linear-gradient(135deg, #0033aa, #0088ff);
   text-align: left;
+}
+
+.compare-hero {
+  background: linear-gradient(120deg, #0a0a0a, #0f1f3a);
+  border-bottom: 1px solid var(--gray);
 }
 
 .hero-small {
@@ -444,6 +483,48 @@ textarea {
   border-top: 1px solid var(--gray);
   color: var(--light-gray);
   margin-top: 40px;
+}
+
+/* COMPARE TABLE */
+.compare-section {
+  padding: 60px 0 90px;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0f0f10;
+  border: 1px solid var(--gray);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.compare-table thead {
+  background: rgba(255, 255, 255, 0.04);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+.compare-table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.compare-table td:nth-child(2) {
+  color: #f3c623;
+}
+
+.compare-table td:nth-child(3) {
+  color: #28e0a6;
+  font-weight: 700;
 }
 
 /* RESPONSIVE */

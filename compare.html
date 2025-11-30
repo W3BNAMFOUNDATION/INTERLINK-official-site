@@ -3,101 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTERLINK™ 2.0 vs Alternatives</title>
-  <link rel="icon" href="public/brand/logo.svg">
-  <link rel="stylesheet" href="public/assets/css/style.css">
+  <title>INTERLINK™ — Compare</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="wrapper navbar">
-      <div class="brand">
-        <img src="public/brand/logo.svg" alt="INTERLINK logo">
-        <span>INTERLINK™ 2.0</span>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html">Overview</a>
-        <a href="sovereign.html">Sovereign</a>
-        <a href="features.html">Features</a>
-        <a href="frontend.html">Web Panel</a>
-        <a href="memory.html">Memory</a>
-        <a href="install.html">Install</a>
-        <a href="docs.html">Docs</a>
-        <a href="cli.html">CLI</a>
-        <a href="demo.html">Demo</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="compare.html">Compare</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+
+  <header class="navbar">
+    <img src="assets/logo/logo.png" class="nav-logo" alt="INTERLINK logo" />
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="install.html">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="compare.html" class="active">Compare</a>
+      <a href="demo.html">Demo</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="wrapper">
-    <section class="section hero">
-      <div>
-        <p class="tagline">Comparison</p>
-        <h1 class="headline">Why teams choose INTERLINK™ 2.0 over point tools.</h1>
-        <p class="subhead">No more stitching together chat, memory, automations, and observability. INTERLINK™ 2.0 ships them all in one secure workspace.</p>
-      </div>
-      <div class="panel">
-        <h3>Highlights</h3>
-        <ul class="checklist">
-          <li><span class="check">✓</span> Unified agent + automation control plane</li>
-          <li><span class="check">✓</span> Offline and air-gapped compatibility</li>
-          <li><span class="check">✓</span> Built-in visualization and telemetry</li>
-        </ul>
-      </div>
-    </section>
+  <section class="hero compare-hero">
+    <div class="container">
+      <h1>Compare INTERLINK™</h1>
+      <p>See how INTERLINK™ stands against traditional AI tools and IDE-based agent frameworks.</p>
+    </div>
+  </section>
 
-    <section class="section">
-      <table class="table">
+  <section class="container compare-section">
+    <table class="compare-table">
+      <thead>
         <tr>
-          <th>Capability</th>
-          <th>INTERLINK™ 2.0</th>
-          <th>DIY Stack</th>
-          <th>Chat-only Tool</th>
+          <th>Feature</th>
+          <th>Traditional Tools</th>
+          <th>INTERLINK™</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Multi-Agent Orchestration</td>
+          <td>❌ Limited or manual</td>
+          <td>✅ Built-in, automated</td>
         </tr>
         <tr>
-          <td>Multi-agent orchestration</td>
-          <td>Built-in, role aware</td>
-          <td>Requires custom routing</td>
-          <td>Not supported</td>
+          <td>Memory Engine</td>
+          <td>⚠️ Plug-ins / cloud only</td>
+          <td>✅ Offline vector memory</td>
         </tr>
         <tr>
-          <td>Long-term vector memory</td>
-          <td>Integrated, per-project</td>
-          <td>External service & setup</td>
-          <td>Short-lived context only</td>
+          <td>Unified Workspace</td>
+          <td>❌ Separate tools & apps</td>
+          <td>✅ One integrated layer</td>
         </tr>
         <tr>
-          <td>Automation (web + files + CLI)</td>
-          <td>Scoped with audit logs</td>
-          <td>Requires scripting & glue</td>
-          <td>Limited or absent</td>
+          <td>File Engine</td>
+          <td>⚠️ Basic local tools</td>
+          <td>✅ Controlled AI-driven file ops</td>
         </tr>
         <tr>
-          <td>Offline & air-gapped</td>
-          <td>Yes, installer bundle</td>
-          <td>Depends on vendor stack</td>
-          <td>No</td>
+          <td>Routing Engine</td>
+          <td>❌ No intelligent routing</td>
+          <td>✅ Routes tasks across models</td>
         </tr>
         <tr>
-          <td>Visualization</td>
-          <td>WebGL + WebGPU-ready</td>
-          <td>Custom build required</td>
-          <td>Basic chat window</td>
+          <td>Offline Operation</td>
+          <td>⚠️ Rare / partial</td>
+          <td>✅ Fully offline-capable</td>
         </tr>
         <tr>
-          <td>Security</td>
-          <td>Permissions, SSO/SCIM, audit</td>
-          <td>Build your own policy layer</td>
-          <td>Limited controls</td>
+          <td>Automation Engine</td>
+          <td>❌ Scripting only</td>
+          <td>✅ Triggers, pipelines & rules</td>
         </tr>
-      </table>
-      <div class="table-note">INTERLINK™ 2.0 reduces integration time from weeks to minutes while keeping enterprise controls intact.</div>
-    </section>
-  </main>
+        <tr>
+          <td>Local-First Privacy</td>
+          <td>⚠️ Mostly cloud</td>
+          <td>✅ Zero-trust sandbox</td>
+        </tr>
+        <tr>
+          <td>Developer Experience</td>
+          <td>❌ High friction</td>
+          <td>✅ Instant install + CLI</td>
+        </tr>
+        <tr>
+          <td>Model Providers</td>
+          <td>⚠️ Single-source</td>
+          <td>✅ Ollama, DeepSeek, Groq, OpenRouter</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>⚠️ Subscription</td>
+          <td>✅ Pay-once local</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-  <footer class="wrapper footer">INTERLINK™ 2.0 — Comparison</footer>
-  <script src="public/assets/js/main.js"></script>
+  <footer class="footer">
+    <p>INTERLINK™ — Unified AI Workspace</p>
+  </footer>
+
+  <script src="assets/scripts/script.js"></script>
 </body>
 </html>
