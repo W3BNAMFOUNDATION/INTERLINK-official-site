@@ -223,6 +223,88 @@ fs.reset()
       </div>
     </section>
 
+    <section class="section panel">
+      <p class="tagline">INTERLINK™ — AutoFlow-Core</p>
+      <h2>Deterministic automation engine for schedules, triggers, and multi-step workflows.</h2>
+      <p class="subhead">AutoFlow-Core runs your scheduled jobs, background tasks, and multi-agent automations with full auditability and offline safety.</p>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>What it powers</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Scheduled tasks and interval jobs</li>
+            <li><span class="check">✓</span> Background automations with deterministic ordering</li>
+            <li><span class="check">✓</span> File, event, and time-based triggers</li>
+            <li><span class="check">✓</span> Multi-step workflows across ingest, memory, and agents</li>
+            <li><span class="check">✓</span> Fully offline sovereign operation</li>
+          </ul>
+        </div>
+        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
+          <h3>Workspace layout</h3>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+/workspace/automation/
+  tasks/
+  triggers/
+  logs/
+  manifests/
+          </pre>
+          <p class="small">Tasks execute inside the sandboxed <code>/workspace/automation/</code> namespace for predictable, repeatable runs.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
+          <h3>Task manifest example</h3>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+id: "task_ingest_sync"
+description: "Ingest PDF and store memory"
+steps:
+  - action: ingest_file
+    file: "ingest/report.pdf"
+  - action: embed
+    model: "default"
+  - action: memory_store
+    target: "memory/shards/"
+          </pre>
+          <p class="small">Supported actions include <code>ingest_file</code>, <code>embed</code>, <code>memory_store</code>, <code>fs_write</code>, <code>fs_delete</code>, <code>cli_command</code>, <code>agent_run</code>, and optional <code>webhook_post</code>.</p>
+        </div>
+        <div>
+          <h3>Trigger & schedule options</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Cron-style schedules (<code>0 */6 * * *</code>) and interval timers (<code>15m</code>).</li>
+            <li><span class="check">•</span> File and directory watchers for new uploads or changes.</li>
+            <li><span class="check">•</span> Event triggers like <code>AGENT_FINISHED</code> to chain workflows.</li>
+            <li><span class="check">•</span> On-demand execution via CLI or API for instant runs.</li>
+          </ul>
+          <p class="small">Each trigger references a manifest ID to launch the correct deterministic pipeline.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>Security & isolation</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Sandboxed execution with per-task runtime limits and rate caps.</li>
+            <li><span class="check">✓</span> No shell or network access unless explicitly enabled.</li>
+            <li><span class="check">✓</span> Memory isolation across tasks with deterministic cleanup.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Audit logging</h3>
+          <p class="small">Every automation writes a forensic log with timestamps, steps, output, and errors.</p>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+/workspace/automation/logs/
+  timestamp
+  task_id
+  execution steps
+  output
+  errors
+  duration
+          </pre>
+        </div>
+      </div>
+    </section>
+
     <section class="section grid-2">
       <div class="panel">
         <h3>Workspace quickstart</h3>
