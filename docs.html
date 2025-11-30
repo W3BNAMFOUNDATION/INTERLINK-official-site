@@ -1,95 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTERLINK™ — Docs</title>
-  <link rel="stylesheet" href="assets/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERLINK™ — Documentation</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 
 <body>
 
 <header class="navbar">
-  <img src="assets/logo/logo.png" class="nav-logo" alt="INTERLINK logo" />
-  <nav>
-    <a href="index.html">Overview</a>
-    <a href="features.html">Features</a>
-    <a href="install.html">Install</a>
-    <a href="docs.html" class="active">Docs</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="compare.html">Compare</a>
-    <a href="demo.html">Demo</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <img src="assets/logo/logo.png" class="nav-logo" alt="INTERLINK logo" />
+    <nav>
+        <a href="index.html">Overview</a>
+        <a href="features.html">Features</a>
+        <a href="install.html">Install</a>
+        <a href="docs.html" class="active">Docs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="compare.html">Compare</a>
+        <a href="demo.html">Demo</a>
+        <a href="invest.html">Invest</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 
-<section class="hero hero-compact">
-  <div class="container">
-    <h1>Documentation</h1>
-    <p class="hero-subtitle">Your complete reference for using INTERLINK™ 2.0</p>
-  </div>
+<section class="hero">
+    <h1>INTERLINK™ Documentation</h1>
+    <p>All official technical, architectural, security, and integration documentation.</p>
 </section>
 
-<section class="container docs-container">
+<section class="container">
 
-  <h2>1. Overview</h2>
-  <p>INTERLINK™ is a unified AI workspace for agents, memory, knowledge engines, automation, files, and secure operations. This documentation provides technical and conceptual guidance for installation, usage, APIs, and architecture.</p>
+    <h2>📘 System Architecture</h2>
+    <p>Complete overview of INTERLINK’s backend, memory engine, ingest modules, filesystem restrictions, and the Gibberlink™ protocol.</p>
 
-  <h2>2. System Architecture</h2>
-  <ul>
-    <li><strong>Agent Router</strong> — multi-model prompt routing.</li>
-    <li><strong>Memory Engine</strong> — vector + JSONL + metadata portable storage.</li>
-    <li><strong>Knowledge Engine</strong> — structuring &amp; processing pipelines.</li>
-    <li><strong>Automation Engine</strong> — triggers, workflows, and batch operations.</li>
-    <li><strong>File Engine</strong> — safe, sandboxed file operations.</li>
-    <li><strong>CLI Suite</strong> — local development tools.</li>
-  </ul>
+    <ul>
+        <li><strong>Core Engine Overview</strong></li>
+        <li><strong>Backend Routing Architecture</strong></li>
+        <li><strong>Memory Vector Engine</strong></li>
+        <li><strong>Ingest System Design</strong></li>
+        <li><strong>Filesystem Safety Model</strong></li>
+        <li><strong>Gibberlink™ Distributed Pipe</strong></li>
+    </ul>
 
-  <h2>3. Backend Modules</h2>
-  <pre><code>/workspace/
-    memory/      → .jsonl, .index, .meta
-    ingest/      → URL, PDF, TXT, YouTube
-    filesystem/  → isolated file manager
-    gibberlink/  → agent communication layer
-    cli/         → local developer tools
+    <h2>🧠 Memory Engine</h2>
+    <p>INTERLINK incorporates a distributed vector memory engine optimized for reasoning and multimodal ingest.</p>
+
+    <ul>
+        <li>FAISS-based vector embeddings</li>
+        <li>Long-context stitching</li>
+        <li>Distributed memory cells</li>
+        <li>Fast semantic search</li>
+        <li>PDF / Web / Audio memory ingestion</li>
+    </ul>
+
+    <h2>📡 Ingest Documentation</h2>
+    <p>Supported ingest formats:</p>
+
+    <ul>
+        <li>PDF (via PDFPlumber)</li>
+        <li>YouTube (via PyTube or Whisper)</li>
+        <li>Web URLs (via BS4 + Requests)</li>
+        <li>Local text ingestion</li>
+        <li>Audio transcription</li>
+    </ul>
+
+    <h3>CLI Commands</h3>
+
+<pre><code>
+python w3.py ingest pdf path/to/file.pdf
+python w3.py ingest url https://example.com
+python w3.py ingest yt https://youtube.com/...
+python w3.py chat groq "Explain quantum finance"
 </code></pre>
 
-  <h2>4. Installation</h2>
-  <p>Follow full instructions via the <a href="install.html">Install</a> page, including the one-shot installer.</p>
+    <h2>🔐 Security Framework</h2>
 
-  <h2>5. APIs</h2>
+    <ul>
+        <li>Zero-Fault Filesystem Model</li>
+        <li>Sandboxed ingest environment</li>
+        <li>API key isolation (no hardcoded keys)</li>
+        <li>Service profile separation</li>
+        <li>WebSocket safety</li>
+    </ul>
 
-  <h3>5.1 /api/send</h3>
-  <p>Sends prompts to selected service profile (Ollama, DeepSeek, Groq, etc.).</p>
+    <h2>🔌 API Reference</h2>
 
-  <h3>5.2 /api/memory</h3>
-  <p>Store, retrieve, and query long-term memory shards.</p>
+    <p>INTERLINK exposes a clean API for any external system:</p>
 
-  <h3>5.3 WebSocket Streaming</h3>
-  <p>Real-time streaming channel for agent responses.</p>
+<pre><code>
+POST /api/send
+{
+  "service": "groq",
+  "prompt": "Hello world"
+}
+</code></pre>
 
-  <h2>6. CLI Commands</h2>
-  <ul>
-    <li><code>interlink chat</code> — talk to the router</li>
-    <li><code>interlink ingest</code> — add data to the memory engine</li>
-    <li><code>interlink raw</code> — direct model access</li>
-  </ul>
+    <h2>⚙️ Service Profiles</h2>
+    <p>All models and endpoints are configured in:</p>
 
-  <h2>7. Troubleshooting</h2>
-  <ul>
-    <li>Check Python version (3.10 recommended).</li>
-    <li>Ensure service_profiles.yaml is correctly configured.</li>
-    <li>Run <code>pip install -r requirements.txt</code></li>
-  </ul>
+<pre><code>config/service_profiles.yaml</code></pre>
 
-  <h2>8. Support</h2>
-  <p>For enterprise support and integrations, contact us at:</p>
-  <p><strong>support@interlink.so</strong></p>
+    <p>Supported profiles:</p>
+
+    <ul>
+        <li>Ollama (local)</li>
+        <li>DeepSeek (API)</li>
+        <li>Groq (API)</li>
+        <li>OpenAI-compatible models</li>
+    </ul>
+
+    <h2>🚀 Deployment</h2>
+
+    <ul>
+        <li>Local Dev Deployment</li>
+        <li>Cloud VM Deployment</li>
+        <li>Linux Server Deployment</li>
+        <li>Dockerized Deployment (optional)</li>
+    </ul>
+
+    <h2>📈 Performance</h2>
+
+    <ul>
+        <li>Fast boot time</li>
+        <li>Parallel ingest threads</li>
+        <li>Vector cache pre-loading</li>
+        <li>Low-latency inference routing</li>
+    </ul>
+
+    <h2>🔄 Updating the Engine</h2>
+
+<pre><code>
+git pull origin main
+python install.py
+</code></pre>
+
+    <h2>📞 Support</h2>
+    <p>Email: support@interlink.ai</p>
 
 </section>
 
 <footer class="footer">
-  <p>INTERLINK™ — Unified AI Workspace</p>
+    <p>INTERLINK™ — Unified AI Workspace</p>
 </footer>
 
 <script src="assets/scripts/script.js"></script>
