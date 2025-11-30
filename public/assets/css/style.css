@@ -112,6 +112,14 @@ header {
   box-shadow: none;
 }
 
+.cta.tertiary {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+  width: fit-content;
+}
+
 .hero {
   padding: 72px 0 32px;
   display: grid;
@@ -128,6 +136,26 @@ header {
 }
 
 .hero .subhead {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.page-hero {
+  padding: 80px 0 36px;
+  background: radial-gradient(circle at 20% 20%, rgba(102, 169, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(94, 243, 193, 0.1), transparent 25%),
+    rgba(5, 6, 12, 0.6);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero h1 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  margin: 12px 0 10px;
+}
+
+.page-hero .subhead {
   color: var(--muted);
   font-size: 18px;
   margin-bottom: 24px;
@@ -178,6 +206,12 @@ header {
   font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
   margin-top: 0;
   letter-spacing: -0.3px;
+}
+
+.content-section {
+  padding: 40px 0 60px;
+  display: grid;
+  gap: 20px;
 }
 
 .small {
@@ -276,6 +310,24 @@ header {
   border-radius: 12px;
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.03);
+}
+
+.contact-card {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-card h3 {
+  margin: 0;
+}
+
+.contact-card .cta {
+  margin-top: 6px;
+}
+
+.response-note {
+  display: grid;
+  gap: 12px;
 }
 
 .hero-visual {
@@ -395,6 +447,17 @@ textarea {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 13px;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+}
+
+.logo-link:hover {
+  color: var(--text);
 }
 
 @media (max-width: 720px) {
