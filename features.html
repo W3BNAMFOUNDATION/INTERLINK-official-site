@@ -1,88 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTERLINK™ — Features</title>
-
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTERLINK — Features</title>
+  <link rel="stylesheet" href="assets/styles/style.css" />
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="assets/logo.svg" alt="INTERLINK Logo">
-            </a>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <img src="assets/logo/logo.png" alt="INTERLINK Logo" class="logo-img" />
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html" class="active">Features</a>
+        <a href="invest.html">Invest</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero hero-small">
+    <div class="container">
+      <h1>Platform Features</h1>
+      <p class="hero-subtitle">
+        A sovereign cognitive fabric designed for modern enterprise automation.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="section">
+    <div class="container">
+      <h2>Main Capabilities</h2>
+
+      <div class="features-grid">
+
+        <div class="feature-box">
+          <h3>Multimodal Ingest</h3>
+          <p>
+            Documents, PDFs, audio, video, URLs, OCR — processed locally with maximum security.
+          </p>
         </div>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="features.html" class="active">Features</a>
-            <a href="invest.html">Invest</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+        <div class="feature-box">
+          <h3>Vector Memory Engine</h3>
+          <p>
+            High-performance embeddings and retrieval optimized for enterprise knowledge bases.
+          </p>
+        </div>
 
-    <!-- HERO -->
-    <section class="page-hero">
-        <h1>INTERLINK™ Features</h1>
-        <p>The full sovereign distributed AI engine — modular, scalable, offline-capable.</p>
-    </section>
+        <div class="feature-box">
+          <h3>Private LLM Execution</h3>
+          <p>
+            Integrates seamlessly with Ollama, DeepSeek, Groq, and other secure providers.
+          </p>
+        </div>
 
-    <!-- CONTENT -->
-    <section class="content-section">
+        <div class="feature-box">
+          <h3>Real-Time Web Panel</h3>
+          <p>
+            Clean dashboard with streaming responses, conversation control, and ingest management.
+          </p>
+        </div>
 
-        <h2>Core Capabilities</h2>
-        <ul>
-            <li>Distributed Cognitive Fabric Architecture</li>
-            <li>Multimodal Ingest Engine (PDF, URL, TXT, audio/video)</li>
-            <li>Vector Memory System with persistent knowledge base</li>
-            <li>Router-Core for unified messaging and service selection</li>
-            <li>Local + Remote model support (Ollama, DeepSeek, Groq, OpenAI)</li>
-            <li>WebSocket real-time streaming</li>
-            <li>File-system sandboxing with FS-Core</li>
-            <li>Automation Engine for triggers, schedulers, and pipelines</li>
-            <li>AI Agents with deterministic task execution</li>
-            <li>Full offline capability for air-gapped deployments</li>
-        </ul>
+        <div class="feature-box">
+          <h3>API Layer</h3>
+          <p>
+            REST + WebSocket endpoints for enterprise integration.
+          </p>
+        </div>
 
-        <h2>Enterprise Features</h2>
-        <ul>
-            <li>Security-hardened architecture</li>
-            <li>Auditable workflows and logs</li>
-            <li>Multi-tenant ready</li>
-            <li>Role-based separation of duties</li>
-            <li>Compliance support (GDPR, HIPAA, FINRA, SOX)</li>
-            <li>Offline installer + deterministic reproducible builds</li>
-        </ul>
+        <div class="feature-box">
+          <h3>Audit &amp; Compliance</h3>
+          <p>
+            GDPR, HIPAA, and financial-grade logs for full traceability.
+          </p>
+        </div>
 
-        <h2>Supported Providers</h2>
-        <ul>
-            <li><b>DeepSeek</b> — high-performance cloud inference</li>
-            <li><b>Groq</b> — ultra-fast inference (versatile models)</li>
-            <li><b>Ollama</b> — local models, sovereign offline capability</li>
-            <li><b>OpenAI</b> — compatibility layer for GPT models</li>
-        </ul>
+      </div>
+    </div>
+  </section>
 
-        <h2>Use Cases</h2>
-        <ul>
-            <li>Government &amp; National Security</li>
-            <li>Banking &amp; Finance</li>
-            <li>Research Labs</li>
-            <li>Critical Infrastructure</li>
-            <li>Enterprise Automation</li>
-            <li>AI-native Knowledge Management</li>
-        </ul>
+  <!-- ARCHITECTURE -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>Architecture Overview</h2>
+      <p>
+        The INTERLINK engine is modeled as a distributed cognitive fabric:
+      </p>
 
-    </section>
+      <ul class="arch-list">
+        <li>Ingress layer for multimodal content</li>
+        <li>Memory engine with vector search</li>
+        <li>LLM routing with multiple providers</li>
+        <li>Filesystem sandbox with secure isolation</li>
+        <li>Gibberlink™ encrypted inter-module communication</li>
+      </ul>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 INTERLINK™ — All Rights Reserved</p>
-    </footer>
+      <a href="invest.html" class="btn-secondary mt-2">View Investor Kit</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      INTERLINK — Sovereign AI Infrastructure • © 2025
+    </div>
+  </footer>
 
 </body>
 </html>
