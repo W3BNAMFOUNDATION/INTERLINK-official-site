@@ -4,6 +4,7 @@ The public website for INTERLINK™, the unified AI workspace for agents, memory
 
 ## Structure
 - `index.html` — landing page with overview, hero visualization, and security pitch
+- `sovereign.html` — sovereign AI infrastructure overview for regulated and mission-critical teams
 - `features.html` — capability deep-dive
 - `install.html` — Windows/Linux installer entry points with copyable commands
 - `docs.html` — quickstart, APIs, security, extensibility
