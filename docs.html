@@ -80,6 +80,88 @@
     </section>
 
     <section class="section panel">
+      <p class="tagline">INTERLINK™ — Route-Core</p>
+      <h2>Router & Messaging Layer for deterministic, multi-service orchestration.</h2>
+      <p class="subhead">Route-Core is the communication backbone that normalizes every message, selects the right model or agent, and streams unified responses to the frontend, CLI, or API consumers.</p>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>Responsibilities</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Parse text, files, instructions, and agent commands.</li>
+            <li><span class="check">✓</span> Normalize messages into a universal schema.</li>
+            <li><span class="check">✓</span> Dispatch to Ollama, DeepSeek, Groq, or internal agents via service profiles.</li>
+            <li><span class="check">✓</span> Stream token-by-token responses over WebSockets.</li>
+            <li><span class="check">✓</span> Return uniform output payloads with status and token counts.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Universal message format</h3>
+          <p class="small">Every module speaks the same envelope to avoid duplication and circular imports.</p>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+{
+  "type": "text",
+  "role": "user",
+  "content": "Hello world",
+  "service": "deepseek"
+}
+          </pre>
+          <p class="small">Responses return <code>{ status, tokens, content }</code> in the same structure across REST and WebSocket clients.</p>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>Routing table</h3>
+          <p class="small">Declarative paths keep API, ingest, memory, and streaming endpoints consistent.</p>
+          <ul class="checklist">
+            <li><span class="check">•</span> <code>/api/send</code> → Route-Core → Service Profiles → AI Engine</li>
+            <li><span class="check">•</span> <code>/api/ingest</code> → Ingest Engine</li>
+            <li><span class="check">•</span> <code>/api/memory/search</code> → Memory Engine</li>
+            <li><span class="check">•</span> <code>/ws</code> → WebSocket stream router</li>
+            <li><span class="check">•</span> <code>/cli</code> → CLI integration layer</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Service profiles</h3>
+          <p class="small">Requests map to declarative profiles that choose the correct client and model.</p>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+services:
+  ollama:
+    type: "ollama"
+    base_url: "http://localhost:11434"
+    model: "llama3.2"
+
+  deepseek:
+    type: "openai_compat"
+    base_url: "https://api.deepseek.com/v1"
+    env_key: "DEEPSEEK_API_KEY"
+    model: "deepseek-chat"
+          </pre>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top: 18px;">
+        <div class="panel">
+          <h3>WebSocket streaming</h3>
+          <p class="small">Keeps the frontend, CLI, and external consumers in sync at <code>ws://localhost:8000/ws</code> with token-by-token updates.</p>
+        </div>
+        <div class="panel">
+          <h3>Security guardrails</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> JSON validation and service whitelisting.</li>
+            <li><span class="check">✓</span> Rate limiting and token caps per request.</li>
+            <li><span class="check">✓</span> Output sanitization for deterministic responses.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Deterministic behaviour</h3>
+          <p class="small">Route-Core enforces separation of responsibilities, model selection per request, and consistent transports so INTERLINK™ behaves like one cohesive fabric.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
       <p class="tagline">INTERLINK™ — FS-Core</p>
       <h2>Secure Filesystem Layer for sandboxed, deterministic access.</h2>
       <p class="subhead">FS-Core is the hardened I/O foundation for every INTERLINK™ module. It normalizes paths, blocks traversal, enforces file policies, and keeps agent sandboxes isolated across Windows, Linux, and Mac.</p>
