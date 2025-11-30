@@ -460,6 +460,74 @@ textarea {
   color: var(--text);
 }
 
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.demo-panel h3 {
+  margin-top: 0;
+}
+
+.pill-list,
+.route-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.tip {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.dropzone {
+  margin-top: 12px;
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.route-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  margin-right: 10px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 @media (max-width: 720px) {
   .navbar {
     flex-direction: column;
