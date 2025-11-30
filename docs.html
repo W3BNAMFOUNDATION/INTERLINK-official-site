@@ -79,6 +79,83 @@
       </div>
     </section>
 
+    <section class="section panel">
+      <p class="tagline">INTERLINK™ — Secure Filesystem Engine</p>
+      <h2>Hardened, sandboxed I/O for every agent, memory job, and automation pipeline.</h2>
+      <p class="subhead">The filesystem engine is the controlled access layer for the entire INTERLINK™ ecosystem, delivering deterministic paths, namespaced workspaces, and automatic cleanup across Windows, Linux, and Mac.</p>
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>Core principles</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Sandboxed operations with read/write isolation per agent</li>
+            <li><span class="check">✓</span> Deterministic, normalized file paths with traversal protection</li>
+            <li><span class="check">✓</span> Namespaced workspaces for ingest, memory, automation, and uploads</li>
+            <li><span class="check">✓</span> Secure temp directories with automatic expiration</li>
+            <li><span class="check">✓</span> Cross-platform compatibility for sovereign and offline deployments</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Security model</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Path whitelisting to restrict access to approved directories</li>
+            <li><span class="check">•</span> File type enforcement to block unsafe executables</li>
+            <li><span class="check">•</span> Quotas to prevent runaway storage and oversized writes</li>
+            <li><span class="check">•</span> UTF-8 normalization and BOM removal on reads</li>
+            <li><span class="check">•</span> Atomic writes with built-in versioning for corruption-safe saves</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
+          <h3>Filesystem layout</h3>
+          <p class="small">Namespaced directories keep ingest, memory, and automation work isolated from one another.</p>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+/workspace/
+  /ingest/
+  /memory/
+  /agents/
+  /automation/
+  /tmp/
+  /uploads/
+          </pre>
+        </div>
+        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
+          <h3>Built-in tools</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Safe directory creation, listing, and removal</li>
+            <li><span class="check">✓</span> Automated temp cleanup and sandbox resets</li>
+            <li><span class="check">✓</span> MIME detection and upload validation</li>
+            <li><span class="check">✓</span> Workspace-scoped access policies for agents</li>
+            <li><span class="check">✓</span> API and CLI hooks for controlled file commands</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>Sample operations</h3>
+          <p class="small">Deterministic commands used by agents, ingest jobs, and automation scripts.</p>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+filesystem.write("workspace/notes/test.txt", "Hello World")
+content = filesystem.read("workspace/notes/test.txt")
+files = filesystem.list("workspace/notes/")
+filesystem.reset()
+          </pre>
+        </div>
+        <div>
+          <h3>Integrations</h3>
+          <table class="table">
+            <tr><th>Module</th><th>Interaction</th></tr>
+            <tr><td>Ingest Engine</td><td>Provides file-access for ingestion pipelines.</td></tr>
+            <tr><td>Memory Engine</td><td>Stores vector memory snapshots and structured files.</td></tr>
+            <tr><td>Agents</td><td>Run within restricted sandboxes with scoped permissions.</td></tr>
+            <tr><td>Automation Engine</td><td>Executes scheduled file operations and cleanup.</td></tr>
+            <tr><td>CLI</td><td>Issues controlled file commands with audited scopes.</td></tr>
+          </table>
+          <p class="small" style="margin-top: 10px;">Local-only operations keep sovereign deployments offline while maintaining durability.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section grid-3">
       <div class="panel">
         <div class="icon">1</div>
