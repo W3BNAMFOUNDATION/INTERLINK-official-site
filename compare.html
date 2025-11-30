@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,8 +26,8 @@
 
   <section class="hero compare-hero">
     <div class="container">
-      <h1>Compare INTERLINK™</h1>
-      <p>See how INTERLINK™ stands against traditional AI tools and IDE-based agent frameworks.</p>
+      <h1>Compare Plans</h1>
+      <p>See what each INTERLINK™ tier includes.</p>
     </div>
   </section>
 
@@ -35,68 +36,64 @@
       <thead>
         <tr>
           <th>Feature</th>
-          <th>Traditional Tools</th>
-          <th>INTERLINK™</th>
+          <th>Starter</th>
+          <th>Pro</th>
+          <th>Enterprise</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
-          <td>Multi-Agent Orchestration</td>
-          <td>❌ Limited or manual</td>
-          <td>✅ Built-in, automated</td>
+          <td>Local installation</td>
+          <td class="plan-starter">✔</td>
+          <td class="plan-pro">✔</td>
+          <td class="plan-enterprise">✔</td>
         </tr>
+
+        <tr>
+          <td>AI Agent Routing</td>
+          <td class="plan-starter">Basic</td>
+          <td class="plan-pro">Advanced (multi-model)</td>
+          <td class="plan-enterprise">Enterprise orchestration</td>
+        </tr>
+
         <tr>
           <td>Memory Engine</td>
-          <td>⚠️ Plug-ins / cloud only</td>
-          <td>✅ Offline vector memory</td>
+          <td class="plan-starter">✖</td>
+          <td class="plan-pro">✔ JSONL / INDEX / META</td>
+          <td class="plan-enterprise">✔ Distributed clusters</td>
         </tr>
-        <tr>
-          <td>Unified Workspace</td>
-          <td>❌ Separate tools & apps</td>
-          <td>✅ One integrated layer</td>
-        </tr>
+
         <tr>
           <td>File Engine</td>
-          <td>⚠️ Basic local tools</td>
-          <td>✅ Controlled AI-driven file ops</td>
+          <td class="plan-starter">✖</td>
+          <td class="plan-pro">✔ Sandboxed</td>
+          <td class="plan-enterprise">✔ Enterprise-grade</td>
         </tr>
-        <tr>
-          <td>Routing Engine</td>
-          <td>❌ No intelligent routing</td>
-          <td>✅ Routes tasks across models</td>
-        </tr>
-        <tr>
-          <td>Offline Operation</td>
-          <td>⚠️ Rare / partial</td>
-          <td>✅ Fully offline-capable</td>
-        </tr>
+
         <tr>
           <td>Automation Engine</td>
-          <td>❌ Scripting only</td>
-          <td>✅ Triggers, pipelines & rules</td>
+          <td class="plan-starter">✖</td>
+          <td class="plan-pro">✔ Triggers &amp; pipelines</td>
+          <td class="plan-enterprise">✔ Multi-team automation</td>
         </tr>
+
         <tr>
-          <td>Local-First Privacy</td>
-          <td>⚠️ Mostly cloud</td>
-          <td>✅ Zero-trust sandbox</td>
+          <td>CLI Tools</td>
+          <td class="plan-starter">Basic</td>
+          <td class="plan-pro">Full Dev Suite</td>
+          <td class="plan-enterprise">Extended + API</td>
         </tr>
+
         <tr>
-          <td>Developer Experience</td>
-          <td>❌ High friction</td>
-          <td>✅ Instant install + CLI</td>
-        </tr>
-        <tr>
-          <td>Model Providers</td>
-          <td>⚠️ Single-source</td>
-          <td>✅ Ollama, DeepSeek, Groq, OpenRouter</td>
-        </tr>
-        <tr>
-          <td>Price</td>
-          <td>⚠️ Subscription</td>
-          <td>✅ Pay-once local</td>
+          <td>Cloud federation</td>
+          <td class="plan-starter">✖</td>
+          <td class="plan-pro">✖</td>
+          <td class="plan-enterprise">✔</td>
         </tr>
       </tbody>
     </table>
+
   </section>
 
   <footer class="footer">
@@ -105,4 +102,5 @@
 
   <script src="assets/scripts/script.js"></script>
 </body>
+
 </html>
