@@ -222,6 +222,29 @@ services:
     </section>
 
     <section class="section panel">
+      <p class="tagline">INTERLINK™ — GIBBERLINK Engine</p>
+      <h2>Specialized routing for AI-to-AI communication and delegated pipelines.</h2>
+      <p class="subhead">GIBBERLINK sits on top of Route-Core to relay intent between agents, coordinate sub-tasks, and keep long-running pipelines deterministic.</p>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div>
+          <h3>Responsibilities</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Routes agent-to-agent traffic with shared context frames.</li>
+            <li><span class="check">✓</span> Delegates sub-tasks to specialized workers and merges results.</li>
+            <li><span class="check">✓</span> Chains multi-step pipelines with explicit ordering and retries.</li>
+            <li><span class="check">✓</span> Provides isolation per conversation to avoid cross-talk between agents.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Located at</h3>
+          <p class="small">Runs inside the routing layer at <code>/workspace/router/gibberlink/</code> with the HTTP entrypoint <code>POST /api/gibberlink/send</code>.</p>
+          <p class="small">Use this path to connect delegated agents, spawn sub-tasks, and orchestrate multi-hop plans without exposing external network calls.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
       <p class="tagline">INTERLINK™ — FS-Core</p>
       <h2>Secure Filesystem Layer for sandboxed, deterministic access.</h2>
       <p class="subhead">FS-Core is the hardened I/O foundation for every INTERLINK™ module. It normalizes paths, blocks traversal, enforces file policies, and keeps agent sandboxes isolated across Windows, Linux, and Mac.</p>
