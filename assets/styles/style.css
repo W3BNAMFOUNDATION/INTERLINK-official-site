@@ -321,6 +321,31 @@ textarea {
   height: 140px;
 }
 
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  margin: 0;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.error-text {
+  min-height: 20px;
+  margin: 6px 0 0;
+  color: #f89b9b;
+  font-size: 0.95rem;
+}
+
+.input-error {
+  border-color: #f89b9b;
+  box-shadow: 0 0 0 1px rgba(248, 155, 155, 0.35);
+}
+
 .btn-primary[type="submit"] {
   border: none;
   cursor: pointer;

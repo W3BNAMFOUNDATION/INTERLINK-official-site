@@ -26,11 +26,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Simple contact form handler (no backend yet)
+  // Contact form validation (client-side only)
   const contactForm = document.querySelector(".contact-form");
   if (contactForm) {
+    const status = contactForm.querySelector(".form-status");
+
+    const validators = {
+      name: (value) => (value ? "" : "Please enter your name."),
+      email: (value) => {
+        if (!value) return "Please enter your email.";
+        const emailPattern = /[^@\s]+@[^@\s]+\.[^@\s]+/;
+        return emailPattern.test(value) ? "" : "Please enter a valid email.";
+      },
+      message: (value) => (value ? "" : "Please enter a message."),
+    };
+
+    const showError = (field, message) => {
+      const input = contactForm.querySelector(`[name="${field}"]`);
+      const error = contactForm.querySelector(`[data-error-for="${field}"]`);
+      if (input) {
+        input.classList.toggle("input-error", Boolean(message));
+        input.setAttribute("aria-invalid", String(Boolean(message)));
+      }
+      if (error) {
+        error.textContent = message;
+      }
+    };
+
+    const clearMessages = () => {
+      Object.keys(validators).forEach((field) => showError(field, ""));
+      if (status) {
+        status.textContent = "";
+      }
+    };
+
     contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
+
+      clearMessages();
+
+      const formData = new FormData(contactForm);
+      let isValid = true;
+
+      Object.entries(validators).forEach(([field, validate]) => {
+        const value = (formData.get(field) || "").toString().trim();
+        const message = validate(value);
+        showError(field, message);
+        if (message) isValid = false;
+      });
+
+      if (!isValid) return;
 
       const button = contactForm.querySelector("button");
       const originalText = button?.textContent || "";
@@ -41,13 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       setTimeout(() => {
-        alert("Message sent successfully! Our team will contact you soon.");
+        if (status) {
+          status.textContent = "Message sent successfully! Our team will contact you soon.";
+        }
         if (button) {
           button.textContent = originalText;
           button.disabled = false;
         }
         contactForm.reset();
-      }, 1200);
+      }, 800);
     });
   }
 
