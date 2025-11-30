@@ -3,570 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTERLINK™ 2.0 — Documentation</title>
-  <link rel="icon" href="public/brand/logo.svg">
-  <link rel="stylesheet" href="public/assets/css/style.css">
+  <title>INTERLINK™ — Docs</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="wrapper navbar">
-      <div class="brand">
-        <img src="public/brand/logo.svg" alt="INTERLINK logo">
-        <span>INTERLINK™ 2.0</span>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html">Overview</a>
-        <a href="sovereign.html">Sovereign</a>
-        <a href="features.html">Features</a>
-        <a href="frontend.html">Web Panel</a>
-        <a href="memory.html">Memory</a>
-        <a href="install.html">Install</a>
-        <a href="docs.html">Docs</a>
-        <a href="cli.html">CLI</a>
-        <a href="demo.html">Demo</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="compare.html">Compare</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrapper">
-    <section class="section hero">
-      <div>
-        <p class="tagline">Documentation</p>
-        <h1 class="headline">Deploy, govern, and extend INTERLINK™ 2.0.</h1>
-        <p class="subhead">Short-form guides to get your organization running with agents, memory, ingestion, and automation.</p>
-      </div>
-      <div class="panel">
-        <h3>Docs overview</h3>
-        <div class="chip-row">
-          <span class="chip">Setup</span>
-          <span class="chip">Workspace</span>
-          <span class="chip">Memory</span>
-          <span class="chip">Automation</span>
-          <span class="chip">Security</span>
-          <span class="chip">APIs</span>
-        </div>
-      </div>
-    </section>
+<header class="navbar">
+  <img src="assets/logo/logo.png" class="nav-logo" alt="INTERLINK logo" />
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="features.html">Features</a>
+    <a href="install.html">Install</a>
+    <a href="docs.html" class="active">Docs</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="compare.html">Compare</a>
+    <a href="demo.html">Demo</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — CLI-Core</p>
-      <h2>Command-line interface for local control, testing, and automation.</h2>
-      <p class="subhead">Run agents, ingest data, issue raw prompts, and script pipelines from the terminal with the same message format used across the platform.</p>
+<section class="hero hero-compact">
+  <div class="container">
+    <h1>Documentation</h1>
+    <p class="hero-subtitle">Your complete reference for using INTERLINK™ 2.0</p>
+  </div>
+</section>
 
-      <div class="grid-3" style="margin-top: 18px;">
-        <div class="panel">
-          <h3>Capabilities</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Run agents and launch ingest jobs</li>
-            <li><span class="check">•</span> Send raw prompts to any routed model</li>
-            <li><span class="check">•</span> Trigger pipelines and automation tasks</li>
-            <li><span class="check">•</span> Execute file operations through FS-Core</li>
-            <li><span class="check">•</span> Local-first workflows for testing and demos</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Usage examples</h3>
-          <pre><code>python interlink.py chat "hello"
-python interlink.py ingest file ./pdfs/report.pdf
-python interlink.py agent summarize workspace/ingest/*.pdf
-python interlink.py task run pipeline_alpha</code></pre>
-          <p class="small" style="margin-top: 8px;">Matches the same CLI syntax shown on the dedicated CLI page.</p>
-        </div>
-        <div class="panel">
-          <h3>Located at</h3>
-          <p class="small">Installed by the One-Shot Installer at <code>/cli/interlink.py</code> and exposed via the <code>/cli</code> route inside the control plane.</p>
-        </div>
-      </div>
-    </section>
+<section class="container docs-container">
 
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — System Overview</p>
-      <h2>Unified AI operations layer combining agents, memory, and secure automation.</h2>
-      <p class="subhead">INTERLINK™ ships as a single control plane built with FastAPI and the INTERLINK™ Router, blending multi-model agents, real-time memory, ingest pipelines, filesystem virtualization, automation, CLI execution, and a unified permissions plane.</p>
+  <h2>1. Overview</h2>
+  <p>INTERLINK™ is a unified AI workspace for agents, memory, knowledge engines, automation, files, and secure operations. This documentation provides technical and conceptual guidance for installation, usage, APIs, and architecture.</p>
 
-      <div class="grid-3" style="margin-top: 18px;">
-        <div class="panel">
-          <h3>Control Plane</h3>
-          <p class="small">Routes requests, loads service profiles for Ollama, DeepSeek, Groq, and local models, and dispatches tasks across subsystems.</p>
-          <ul class="checklist">
-            <li><span class="check">✓</span> FastAPI command layer backed by the INTERLINK™ Router.</li>
-            <li><span class="check">✓</span> Orchestrates memory, ingest, filesystem, and agent behaviors.</li>
-            <li><span class="check">✓</span> Deterministic routing for REST and WebSocket clients.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Memory & Agents</h3>
-          <p class="small">Real-time memory with structured recall plus multi-model agents that respect workspace permissions and security scopes.</p>
-          <ul class="checklist">
-            <li><span class="check">•</span> Long-term embeddings, keyword filters, and hybrid search.</li>
-            <li><span class="check">•</span> Agent sandboxes with unified permissions across modules.</li>
-            <li><span class="check">•</span> Live context routing between memory, ingest, and FS-Core.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Ingest, FS-Core, and Automation</h3>
-          <p class="small">Capture every source, enforce deterministic filesystem policies, and run offline-safe automations.</p>
-          <ul class="checklist">
-            <li><span class="check">•</span> PDF, URL, video, and API ingestion with structured chunking.</li>
-            <li><span class="check">•</span> Filesystem virtualization with path normalization and sandboxing.</li>
-            <li><span class="check">•</span> AutoFlow automation for schedules, triggers, and multi-step workflows.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <h2>2. System Architecture</h2>
+  <ul>
+    <li><strong>Agent Router</strong> — multi-model prompt routing.</li>
+    <li><strong>Memory Engine</strong> — vector + JSONL + metadata portable storage.</li>
+    <li><strong>Knowledge Engine</strong> — structuring &amp; processing pipelines.</li>
+    <li><strong>Automation Engine</strong> — triggers, workflows, and batch operations.</li>
+    <li><strong>File Engine</strong> — safe, sandboxed file operations.</li>
+    <li><strong>CLI Suite</strong> — local development tools.</li>
+  </ul>
 
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — Ingest Engine</p>
-      <h2>Capture, process, and transform every source into structured intelligence.</h2>
-      <p class="subhead">The ingest engine is the input layer of the sovereign INTERLINK™ stack, turning documents, media, and live feeds into semantic chunks enriched with metadata and vector embeddings.</p>
-      <div class="grid-3" style="margin-top: 18px;">
-        <div class="panel">
-          <h3>Responsibilities</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Convert raw media into clean text.</li>
-            <li><span class="check">•</span> Generate embeddings for long-term memory.</li>
-            <li><span class="check">•</span> Produce indexable knowledge blocks for recall.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Supported inputs</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> PDF and plain text documents.</li>
-            <li><span class="check">•</span> YouTube videos and MP3 audio.</li>
-            <li><span class="check">•</span> Websites, URLs, and local files.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Location</h3>
-          <p class="small">Raw files are staged at <code>/workspace/ingest/</code>, and the HTTP entrypoint is <code>POST /api/ingest</code> for programmatic jobs.</p>
-        </div>
-      </div>
-      <div class="grid-2" style="margin-top: 24px;">
-        <div>
-          <h3>Built-in ingestion types</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> PDFs with multi-column reading and OCR fallback</li>
-            <li><span class="check">✓</span> URLs and webpages with link sanitization and clutter removal</li>
-            <li><span class="check">✓</span> YouTube transcripts with timestamped chunking and language selection</li>
-            <li><span class="check">✓</span> Local files: TXT, MD, HTML, RTF, CSV, JSON, and logs</li>
-            <li><span class="check">✓</span> Images with OCR, transcripts, and raw data streams</li>
-            <li><span class="check">✓</span> API feeds and offline, air-gapped ingestion</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Outputs</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Semantic chunks optimized for retrieval</li>
-            <li><span class="check">•</span> Metadata-rich knowledge packets</li>
-            <li><span class="check">•</span> Structured memory entries</li>
-            <li><span class="check">•</span> Searchable vector embeddings</li>
-          </ul>
-          <h3 style="margin-top: 12px;">Autonomous jobs</h3>
-          <p class="small">Schedule ingestion runs, periodic scraping, batch PDF processing, and enrichment campaigns. Pipelines can be triggered manually, via agents, from the CLI, or fully offline.</p>
-        </div>
-      </div>
-    </section>
+  <h2>3. Backend Modules</h2>
+  <pre><code>/workspace/
+    memory/      → .jsonl, .index, .meta
+    ingest/      → URL, PDF, TXT, YouTube
+    filesystem/  → isolated file manager
+    gibberlink/  → agent communication layer
+    cli/         → local developer tools
+</code></pre>
 
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — Route-Core</p>
-      <h2>Router & Messaging Layer for deterministic, multi-service orchestration.</h2>
-      <p class="subhead">Route-Core is the communication backbone that normalizes every message, selects the right model or agent, and streams unified responses to the frontend, CLI, or API consumers.</p>
+  <h2>4. Installation</h2>
+  <p>Follow full instructions via the <a href="install.html">Install</a> page, including the one-shot installer.</p>
 
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Responsibilities</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> Parse text, files, instructions, and agent commands.</li>
-            <li><span class="check">✓</span> Normalize messages into a universal schema.</li>
-            <li><span class="check">✓</span> Dispatch to Ollama, DeepSeek, Groq, or internal agents via service profiles.</li>
-            <li><span class="check">✓</span> Stream token-by-token responses over WebSockets.</li>
-            <li><span class="check">✓</span> Return uniform output payloads with status and token counts.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Universal message format</h3>
-          <p class="small">Every module speaks the same envelope to avoid duplication and circular imports.</p>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-{
-  "type": "text",
-  "role": "user",
-  "content": "Hello world",
-  "service": "deepseek"
-}
-          </pre>
-          <p class="small">Responses return <code>{ status, tokens, content }</code> in the same structure across REST and WebSocket clients.</p>
-        </div>
-      </div>
+  <h2>5. APIs</h2>
 
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Routing table</h3>
-          <p class="small">Declarative paths keep API, ingest, memory, and streaming endpoints consistent.</p>
-          <ul class="checklist">
-            <li><span class="check">•</span> <code>/api/send</code> → Route-Core → Service Profiles → AI Engine</li>
-            <li><span class="check">•</span> <code>/api/ingest</code> → Ingest Engine</li>
-            <li><span class="check">•</span> <code>/api/memory/search</code> → Memory Engine</li>
-            <li><span class="check">•</span> <code>/ws</code> → WebSocket stream router</li>
-            <li><span class="check">•</span> <code>/cli</code> → CLI integration layer</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Service profiles</h3>
-          <p class="small">Requests map to declarative profiles that choose the correct client and model.</p>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-services:
-  ollama:
-    type: "ollama"
-    base_url: "http://localhost:11434"
-    model: "llama3.2"
+  <h3>5.1 /api/send</h3>
+  <p>Sends prompts to selected service profile (Ollama, DeepSeek, Groq, etc.).</p>
 
-  deepseek:
-    type: "openai_compat"
-    base_url: "https://api.deepseek.com/v1"
-    env_key: "DEEPSEEK_API_KEY"
-    model: "deepseek-chat"
-          </pre>
-        </div>
-      </div>
+  <h3>5.2 /api/memory</h3>
+  <p>Store, retrieve, and query long-term memory shards.</p>
 
-      <div class="grid-3" style="margin-top: 18px;">
-        <div class="panel">
-          <h3>WebSocket streaming</h3>
-          <p class="small">Keeps the frontend, CLI, and external consumers in sync at <code>ws://localhost:8000/ws</code> with token-by-token updates.</p>
-        </div>
-        <div class="panel">
-          <h3>Security guardrails</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> JSON validation and service whitelisting.</li>
-            <li><span class="check">✓</span> Rate limiting and token caps per request.</li>
-            <li><span class="check">✓</span> Output sanitization for deterministic responses.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Deterministic behaviour</h3>
-          <p class="small">Route-Core enforces separation of responsibilities, model selection per request, and consistent transports so INTERLINK™ behaves like one cohesive fabric.</p>
-        </div>
-      </div>
-    </section>
+  <h3>5.3 WebSocket Streaming</h3>
+  <p>Real-time streaming channel for agent responses.</p>
 
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — GIBBERLINK Engine</p>
-      <h2>Specialized routing for AI-to-AI communication and delegated pipelines.</h2>
-      <p class="subhead">GIBBERLINK sits on top of Route-Core to relay intent between agents, coordinate sub-tasks, and keep long-running pipelines deterministic.</p>
+  <h2>6. CLI Commands</h2>
+  <ul>
+    <li><code>interlink chat</code> — talk to the router</li>
+    <li><code>interlink ingest</code> — add data to the memory engine</li>
+    <li><code>interlink raw</code> — direct model access</li>
+  </ul>
 
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Responsibilities</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> Routes agent-to-agent traffic with shared context frames.</li>
-            <li><span class="check">✓</span> Delegates sub-tasks to specialized workers and merges results.</li>
-            <li><span class="check">✓</span> Chains multi-step pipelines with explicit ordering and retries.</li>
-            <li><span class="check">✓</span> Provides isolation per conversation to avoid cross-talk between agents.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Located at</h3>
-          <p class="small">Runs inside the routing layer at <code>/workspace/router/gibberlink/</code> with the HTTP entrypoint <code>POST /api/gibberlink/send</code>.</p>
-          <p class="small">Use this path to connect delegated agents, spawn sub-tasks, and orchestrate multi-hop plans without exposing external network calls.</p>
-        </div>
-      </div>
-    </section>
+  <h2>7. Troubleshooting</h2>
+  <ul>
+    <li>Check Python version (3.10 recommended).</li>
+    <li>Ensure service_profiles.yaml is correctly configured.</li>
+    <li>Run <code>pip install -r requirements.txt</code></li>
+  </ul>
 
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — FS-Core</p>
-      <h2>Secure Filesystem Layer for sandboxed, deterministic access.</h2>
-      <p class="subhead">FS-Core is the hardened I/O foundation for every INTERLINK™ module. It normalizes paths, blocks traversal, enforces file policies, and keeps agent sandboxes isolated across Windows, Linux, and Mac.</p>
-      <div class="grid-2" style="margin-top: 18px;">
-        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
-          <h3>Core workspace layout</h3>
-          <p class="small">Only these namespaced paths are accessible to agents, memory jobs, automation, and uploads.</p>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-/workspace/
-  /ingest/
-  /memory/
-  /tmp/
-  /agents/
-  /uploads/
-  /automation/
-          </pre>
-          <table class="table" style="margin-top: 12px;">
-            <tr><th>Folder</th><th>Purpose</th></tr>
-            <tr><td>ingest/</td><td>Raw files entering the ingest pipeline.</td></tr>
-            <tr><td>memory/</td><td>Long-term JSONL shards and vector indexes.</td></tr>
-            <tr><td>tmp/</td><td>Ephemeral work files cleared on each task.</td></tr>
-            <tr><td>agents/</td><td>Namespaced agent working directories.</td></tr>
-            <tr><td>uploads/</td><td>Validated user uploads with type checks.</td></tr>
-            <tr><td>automation/</td><td>Task manifests, triggers, and scripted jobs.</td></tr>
-          </table>
-        </div>
-        <div>
-          <h3>Security architecture</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> Path normalization with traversal blocking for every read/write.</li>
-            <li><span class="check">✓</span> Whitelisted base paths limited to <code>/workspace/*</code>.</li>
-            <li><span class="check">✓</span> Sandboxed execution with per-agent isolation and scoped quotas.</li>
-            <li><span class="check">✓</span> File-type validation that rejects executables (<code>.exe</code>, <code>.sh</code>, <code>.ps1</code>, <code>.dll</code>, <code>.bin</code>, <code>.so</code>).</li>
-            <li><span class="check">✓</span> Automatic cleanup for <code>/workspace/tmp/</code> on each task start.</li>
-            <li><span class="check">✓</span> Deterministic folder layout to guarantee reproducible paths.</li>
-          </ul>
-          <div class="table-note" style="margin-top: 12px;">Offline and air-gapped deployments require no external dependencies or cloud access.</div>
-        </div>
-      </div>
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Capabilities</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Safe reads/writes with enforced size limits and normalization.</li>
-            <li><span class="check">•</span> Directory creation, listing, and deletion within whitelisted roots.</li>
-            <li><span class="check">•</span> Controlled uploads with MIME validation.</li>
-            <li><span class="check">•</span> Sandbox resets to clear temp files and restore a clean state.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Sample operations</h3>
-          <p class="small">Deterministic commands used by agents, ingest jobs, and automation scripts.</p>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-fs.write("tmp/test.txt", "Hello INTERLINK")
-content = fs.read("tmp/test.txt")
-items = fs.list("memory/")
-fs.mkdir("agents/agent7/")
-fs.delete("tmp/task-cache.txt")
-fs.reset()
-          </pre>
-        </div>
-      </div>
-      <div class="grid-2" style="margin-top: 18px;">
-        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
-          <h3>Module integrations</h3>
-          <table class="table">
-            <tr><th>Module</th><th>Interaction</th></tr>
-            <tr><td>Ingest Engine</td><td>Reads raw files from <code>ingest/</code> with validated access.</td></tr>
-            <tr><td>Memory Engine</td><td>Writes vector shards and structured snapshots in <code>memory/</code>.</td></tr>
-            <tr><td>Agents</td><td>Operate inside <code>agents/*</code> sandboxes with scoped permissions.</td></tr>
-            <tr><td>Automation Engine</td><td>Runs manifest-driven jobs in <code>automation/</code> with cleanup hooks.</td></tr>
-            <tr><td>CLI</td><td>Provides user-facing commands against the FS-Core sandbox.</td></tr>
-          </table>
-          <p class="small" style="margin-top: 10px;">All operations stay local to the sovereign workspace for regulated deployments.</p>
-        </div>
-        <div>
-          <h3>Testing the sandbox</h3>
-          <p class="small">Use built-in commands to validate access before connecting agents and automations.</p>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-fs.write("automation/output.json", "{...}")
-fs.read("automation/output.json")
-fs.list("uploads/")
-fs.reset()
-          </pre>
-        </div>
-      </div>
-    </section>
+  <h2>8. Support</h2>
+  <p>For enterprise support and integrations, contact us at:</p>
+  <p><strong>support@interlink.so</strong></p>
 
-    <section class="section panel">
-      <h2>Filesystem Engine quick reference</h2>
-      <p class="subhead">Virtualize, secure, and link every workspace path through a single governed layer.</p>
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Provides</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Virtual file operations</li>
-            <li><span class="check">•</span> Secure folder access</li>
-            <li><span class="check">•</span> Linked file references</li>
-            <li><span class="check">•</span> Namespaced storage</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Located at</h3>
-          <p class="small">Rooted at <code>/workspace/</code> with namespaced mounts (<code>ingest/</code>, <code>memory/</code>, <code>tmp/</code>, <code>agents/</code>, <code>uploads/</code>, <code>automation/</code>) to keep every module in sync.</p>
-          <p class="small" style="margin-top: 8px;">Accessed through FS-Core safeguards so agents, ingest jobs, automation pipelines, and CLI commands share the same deterministic storage surface.</p>
-        </div>
-      </div>
-    </section>
+</section>
 
-    <section class="section grid-3">
-      <div class="panel">
-        <div class="icon">1</div>
-        <h3>Detect</h3>
-        <p>Identify the incoming source and route it to the correct extractor with file-type aware preprocessing.</p>
-      </div>
-      <div class="panel">
-        <div class="icon">2</div>
-        <h3>Extract</h3>
-        <p>Pull text, metadata, tables, timestamps, and audio tracks. PDFs and videos automatically fall back to OCR when needed.</p>
-      </div>
-      <div class="panel">
-        <div class="icon">3</div>
-        <h3>Clean</h3>
-        <p>Strip headers, footers, navigation, repeated lines, and HTML noise to keep only high-signal content.</p>
-      </div>
-      <div class="panel">
-        <div class="icon">4</div>
-        <h3>Chunk</h3>
-        <p>Split content into semantic units tuned for retrieval, including timestamped segments for long videos.</p>
-      </div>
-      <div class="panel">
-        <div class="icon">5</div>
-        <h3>Embed</h3>
-        <p>Generate vector embeddings for each chunk with support for local, offline models in sovereign environments.</p>
-      </div>
-      <div class="panel">
-        <div class="icon">6</div>
-        <h3>Store</h3>
-        <p>Push structured knowledge into the INTERLINK™ Memory Engine alongside searchable metadata.</p>
-      </div>
-    </section>
+<footer class="footer">
+  <p>INTERLINK™ — Unified AI Workspace</p>
+</footer>
 
-    <section class="section grid-2">
-      <div class="panel">
-        <h3>Security & Sovereignty</h3>
-        <ul class="checklist">
-          <li><span class="check">✓</span> Offline-mode with no external API calls</li>
-          <li><span class="check">✓</span> Sandboxed filesystem operations</li>
-          <li><span class="check">✓</span> Sanitized content processing with local embeddings</li>
-        </ul>
-        <p class="small">Ideal for regulated environments that need to ingest sensitive data without leaving the network.</p>
-      </div>
-      <div class="panel">
-        <h3>Module integrations</h3>
-        <table class="table">
-          <tr><th>Module</th><th>Role</th></tr>
-          <tr><td>Memory Engine</td><td>Stores extracted chunks, embeddings, and metadata.</td></tr>
-          <tr><td>Agents</td><td>Trigger ingest jobs and consume structured knowledge.</td></tr>
-          <tr><td>Automation Engine</td><td>Runs scheduled ingestion routines and enrichment campaigns.</td></tr>
-          <tr><td>Filesystem Layer</td><td>Provides secure file access for local ingestion.</td></tr>
-        </table>
-      </div>
-    </section>
-
-    <section class="section panel">
-      <p class="tagline">INTERLINK™ — AutoFlow-Core</p>
-      <h2>Deterministic automation engine for schedules, triggers, and multi-step workflows.</h2>
-      <p class="subhead">AutoFlow-Core runs your scheduled jobs, background tasks, and multi-agent automations with full auditability and offline safety.</p>
-
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>What it powers</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> Scheduled tasks and interval jobs</li>
-            <li><span class="check">✓</span> Background automations with deterministic ordering</li>
-            <li><span class="check">✓</span> File, event, and time-based triggers</li>
-            <li><span class="check">✓</span> Multi-step workflows across ingest, memory, and agents</li>
-            <li><span class="check">✓</span> Fully offline sovereign operation</li>
-          </ul>
-        </div>
-        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
-          <h3>Workspace layout</h3>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-/workspace/automation/
-  tasks/
-  triggers/
-  logs/
-  manifests/
-          </pre>
-          <p class="small">Tasks execute inside the sandboxed <code>/workspace/automation/</code> namespace for predictable, repeatable runs.</p>
-        </div>
-      </div>
-
-      <div class="grid-2" style="margin-top: 18px;">
-        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
-          <h3>Task manifest example</h3>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-id: "task_ingest_sync"
-description: "Ingest PDF and store memory"
-steps:
-  - action: ingest_file
-    file: "ingest/report.pdf"
-  - action: embed
-    model: "default"
-  - action: memory_store
-    target: "memory/shards/"
-          </pre>
-          <p class="small">Supported actions include <code>ingest_file</code>, <code>embed</code>, <code>memory_store</code>, <code>fs_write</code>, <code>fs_delete</code>, <code>cli_command</code>, <code>agent_run</code>, and optional <code>webhook_post</code>.</p>
-        </div>
-        <div>
-          <h3>Trigger & schedule options</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Cron-style schedules (<code>0 */6 * * *</code>) and interval timers (<code>15m</code>).</li>
-            <li><span class="check">•</span> File and directory watchers for new uploads or changes.</li>
-            <li><span class="check">•</span> Event triggers like <code>AGENT_FINISHED</code> to chain workflows.</li>
-            <li><span class="check">•</span> On-demand execution via CLI or API for instant runs.</li>
-          </ul>
-          <p class="small">Each trigger references a manifest ID to launch the correct deterministic pipeline.</p>
-        </div>
-      </div>
-
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Security & isolation</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> Sandboxed execution with per-task runtime limits and rate caps.</li>
-            <li><span class="check">✓</span> No shell or network access unless explicitly enabled.</li>
-            <li><span class="check">✓</span> Memory isolation across tasks with deterministic cleanup.</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Audit logging</h3>
-          <p class="small">Every automation writes a forensic log with timestamps, steps, output, and errors.</p>
-          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-/workspace/automation/logs/
-  timestamp
-  task_id
-  execution steps
-  output
-  errors
-  duration
-          </pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="section grid-2">
-      <div class="panel">
-        <h3>Workspace quickstart</h3>
-        <ol class="checklist" style="list-style: decimal; color: var(--muted);">
-          <li>Install the desktop app and sign in with your workspace key.</li>
-          <li>Create your first project and select your preferred LLM stack (online/offline).</li>
-          <li>Connect storage: choose local embeddings or your enterprise vector database.</li>
-          <li>Import a PDF, URL, or repository into memory and start chatting with the context.</li>
-        </ol>
-      </div>
-      <div class="panel">
-        <h3>APIs</h3>
-        <p class="small">Call INTERLINK™ 2.0 from any stack. REST and WebSocket endpoints are available once the desktop service is running.</p>
-        <table class="table">
-          <tr><th>Endpoint</th><th>Description</th></tr>
-          <tr><td>/api/v2/agents</td><td>Create, list, and manage agent profiles.</td></tr>
-          <tr><td>/api/v2/memory/search</td><td>Query embeddings with hybrid semantic/keyword filters.</td></tr>
-          <tr><td>/api/v2/automation/run</td><td>Trigger scripted automations with signed scopes.</td></tr>
-        </table>
-        <div class="table-note">Add your workspace token to `Authorization: Bearer &lt;token&gt;` for every request.</div>
-      </div>
-    </section>
-
-    <section class="section grid-2">
-      <div class="panel">
-        <h3>Security controls</h3>
-        <ul class="checklist">
-          <li><span class="check">✓</span> Per-project network and filesystem scopes</li>
-          <li><span class="check">✓</span> Agent sandboxing with user confirmation gates</li>
-          <li><span class="check">✓</span> Audit log export for compliance teams</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Extensibility</h3>
-        <p>Drop in your own models, memory backends, and automation skills. Plug-ins are isolated containers that inherit workspace permissions.</p>
-        <div class="chip-row">
-          <span class="chip">Python & Node hooks</span>
-          <span class="chip">gRPC adapters</span>
-          <span class="chip">Custom WebGL dashboards</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="wrapper footer">INTERLINK™ 2.0 — Documentation</footer>
-  <script src="public/assets/js/main.js"></script>
+<script src="assets/scripts/script.js"></script>
 </body>
 </html>

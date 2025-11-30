@@ -186,6 +186,48 @@ body {
   margin-bottom: 20px;
 }
 
+.docs-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--gray);
+  border-radius: 14px;
+  padding: 40px 32px 50px;
+  margin-top: -60px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.docs-container h2 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.docs-container h3 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.docs-container p,
+.docs-container ul {
+  color: var(--light-gray);
+}
+
+.docs-container ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.docs-container pre {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 12px 0 4px;
+  overflow: auto;
+  color: var(--light-gray);
+  font-size: 0.95rem;
+}
+
 .section p,
 .section-alt p {
   max-width: 900px;
