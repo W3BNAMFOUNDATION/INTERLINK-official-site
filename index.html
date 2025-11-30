@@ -1,165 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>INTERLINK™ — Sovereign AI Fabric</title>
-
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script defer src="assets/js/app.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTERLINK — Sovereign AI Infrastructure</title>
+  <link rel="stylesheet" href="assets/styles/style.css" />
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="assets/logo.svg" alt="INTERLINK Logo">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <img src="assets/logo/logo.png" alt="INTERLINK Logo" class="logo-img" />
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="invest.html">Invest</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>INTERLINK</h1>
+      <p class="hero-subtitle">
+        The next-generation sovereign AI infrastructure designed for enterprise and global-scale cognitive automation.
+      </p>
+      <a href="features.html" class="btn-primary">Explore Features</a>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="section">
+    <div class="container">
+      <h2>Core Pillars</h2>
+
+      <div class="pillars-grid">
+
+        <div class="pillar-box">
+          <h3>Sovereign AI</h3>
+          <p>Run models locally, privately, and securely — full control, zero external dependency.</p>
         </div>
 
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="features.html">Features</a>
-            <a href="invest.html">Invest</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-
-        <div class="hero-left">
-            <p class="eyebrow">Offline-first • Air-gapped ready • Sovereign</p>
-            <h1>INTERLINK™</h1>
-            <h2>The Sovereign Distributed AI Fabric</h2>
-
-            <p class="lede">
-                A modular, sovereign, offline-capable cognitive engine designed for enterprise,
-                government, defense, research labs, and critical infrastructure deployments.
-            </p>
-
-            <div class="cta-row">
-                <a class="cta-button" href="features.html">Explore Features</a>
-                <a class="ghost-button" href="docs.html">View Docs</a>
-            </div>
-
-            <div class="assurance-row">
-                <div class="assurance">
-                    <span class="dot"></span> Full installer for Windows &amp; Linux
-                </div>
-                <div class="assurance">
-                    <span class="dot"></span> Built-in service profiles for Ollama, DeepSeek, Groq, OpenAI
-                </div>
-                <div class="assurance">
-                    <span class="dot"></span> Ready for sovereign, air-gapped deployment
-                </div>
-            </div>
+        <div class="pillar-box">
+          <h3>Enterprise Fabric</h3>
+          <p>Distributed cognitive architecture supporting multimodal ingest and real-time automation.</p>
         </div>
 
-        <div class="hero-right">
-            <!-- 3D LOGO ROTATION (CSS ANIMATION) -->
-            <div class="logo-frame">
-                <img class="logo-3d" src="assets/logo.svg" alt="INTERLINK 3D Logo">
-            </div>
-            <p class="hint">Live CSS 3D rotation · Zero dependencies</p>
+        <div class="pillar-box">
+          <h3>Compliance First</h3>
+          <p>GDPR, HIPAA, financial-grade security, and enterprise audit trails built-in.</p>
         </div>
 
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- CAPABILITIES OVERVIEW -->
-    <section class="content-section feature-grid">
-        <div class="feature-card">
-            <p class="chip">Sovereign Fabric</p>
-            <h3>Mission-grade architecture</h3>
-            <p>
-                Distributed cognitive mesh with unified memory, deterministic agent routing,
-                and offline-first execution for regulated industries.
-            </p>
-            <ul>
-                <li>Router-Core with deterministic pathways</li>
-                <li>Vector memory with encrypted persistence</li>
-                <li>Composable automations for CI/CD of AI flows</li>
-            </ul>
-        </div>
+  <!-- ABOUT SECTION -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>What is INTERLINK?</h2>
+      <p>
+        INTERLINK is a complete AI ecosystem designed for modern enterprise demands:
+        secure ingest, vector memory, multimodal processing, cognitive routing, private LLM execution,
+        and a modular architecture ready for global deployment.
+      </p>
+      <a href="invest.html" class="btn-secondary">Investor Overview</a>
+    </div>
+  </section>
 
-        <div class="feature-card">
-            <p class="chip">Inference Mesh</p>
-            <h3>Provider flexibility by default</h3>
-            <p>
-                First-class service profiles for local and cloud inference. Route between
-                Ollama, DeepSeek, Groq, and OpenAI without changing your workflows.
-            </p>
-            <ul>
-                <li>Local LLMs for sovereign installs</li>
-                <li>Ultra-fast Groq throughput</li>
-                <li>OpenAI-compatible endpoints for portability</li>
-            </ul>
-        </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      INTERLINK — Sovereign AI Infrastructure • © 2025
+    </div>
+  </footer>
 
-        <div class="feature-card">
-            <p class="chip">Trust &amp; Security</p>
-            <h3>Designed for critical infrastructure</h3>
-            <p>
-                Air-gapped friendly with zero data extraction. Built-in auditability, strict
-                access separation, and reproducible installers for controlled rollouts.
-            </p>
-            <ul>
-                <li>RBAC and workspace isolation</li>
-                <li>Immutable artifacts for offline installs</li>
-                <li>Compliance-ready logging</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- SERVICE PROFILES CALLOUT -->
-    <section class="content-section service-panel">
-        <div>
-            <h2>Service profiles included out of the box</h2>
-            <p class="muted">
-                Use the shipped <code>service_profiles.yaml</code> to start with battle-tested defaults, then
-                swap keys or base URLs to match your deployment boundary.
-            </p>
-
-            <div class="provider-list">
-                <div class="provider">
-                    <p class="provider-name">Ollama</p>
-                    <p class="provider-note">Local-first inference, air-gapped friendly</p>
-                </div>
-                <div class="provider">
-                    <p class="provider-name">DeepSeek</p>
-                    <p class="provider-note">High-performance cloud inference</p>
-                </div>
-                <div class="provider">
-                    <p class="provider-name">Groq</p>
-                    <p class="provider-note">Ultra-fast tokens for production chatops</p>
-                </div>
-                <div class="provider">
-                    <p class="provider-name">OpenAI</p>
-                    <p class="provider-note">Universal compatibility for GPT endpoints</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="quick-links">
-            <div class="callout">
-                <h4>Install &amp; run</h4>
-                <p>Copy the installer commands from <a href="install.html">install.html</a> for Windows or Linux.</p>
-            </div>
-            <div class="callout">
-                <h4>Backend quickstart</h4>
-                <p>Activate the virtualenv, install <code>requirements.txt</code>, and run <code>python main.py</code>.</p>
-            </div>
-            <div class="callout">
-                <h4>Docs &amp; support</h4>
-                <p>Read the API overview on <a href="docs.html">docs.html</a> or reach out via <a href="contact.html">contact.html</a>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 INTERLINK™ — All Rights Reserved</p>
-    </footer>
-
+  <script src="assets/scripts/script.js"></script>
 </body>
 </html>
