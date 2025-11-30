@@ -1,94 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTERLINK™ 2.0 — Pricing</title>
-  <link rel="icon" href="public/brand/logo.svg">
-  <link rel="stylesheet" href="public/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERLINK™ — Pricing</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
+
 <body>
-  <header>
-    <div class="wrapper navbar">
-      <div class="brand">
-        <img src="public/brand/logo.svg" alt="INTERLINK logo">
-        <span>INTERLINK™ 2.0</span>
-      </div>
-      <nav class="nav-links">
+
+<header class="navbar">
+    <img src="assets/logo/logo.png" class="nav-logo" alt="INTERLINK logo" />
+    <nav>
         <a href="index.html">Overview</a>
-        <a href="sovereign.html">Sovereign</a>
         <a href="features.html">Features</a>
-        <a href="frontend.html">Web Panel</a>
-        <a href="memory.html">Memory</a>
         <a href="install.html">Install</a>
         <a href="docs.html">Docs</a>
-        <a href="cli.html">CLI</a>
-        <a href="demo.html">Demo</a>
-        <a href="pricing.html">Pricing</a>
+        <a href="pricing.html" class="active">Pricing</a>
         <a href="compare.html">Compare</a>
+        <a href="demo.html">Demo</a>
         <a href="contact.html">Contact</a>
-      </nav>
+    </nav>
+</header>
+
+<section class="hero hero-compact">
+    <h1>Pricing</h1>
+    <p>Simple, transparent, investor-ready pricing for the unified INTERLINK™ workstation.</p>
+</section>
+
+<section class="container pricing-section">
+
+    <div class="pricing-card">
+        <h2>Starter</h2>
+        <p class="price">$0</p>
+        <ul>
+            <li>✔ Local install</li>
+            <li>✔ Basic AI agent routing</li>
+            <li>✔ CLI + workspace shell</li>
+            <li>✖ No automation engine</li>
+            <li>✖ No multi-agent pipelines</li>
+        </ul>
+        <button class="primary-btn disabled" aria-disabled="true">Included</button>
     </div>
-  </header>
 
-  <main class="wrapper">
-    <section class="section hero">
-      <div>
-        <p class="tagline">Plans</p>
-        <h1 class="headline">From solo builders to enterprise operations.</h1>
-        <p class="subhead">Choose the plan that fits your stage. Every plan includes the WebGL visualization layer and long-term memory core.</p>
-      </div>
-      <div class="panel">
-        <h3>All plans include</h3>
-        <ul class="checklist">
-          <li><span class="check">✓</span> Secure file and web automation</li>
-          <li><span class="check">✓</span> Vector memory and ingestion pipelines</li>
-          <li><span class="check">✓</span> Multi-agent orchestration</li>
-          <li><span class="check">✓</span> Desktop + browser demo access</li>
+    <div class="pricing-card highlight">
+        <h2>Pro</h2>
+        <p class="price">$39 one-time</p>
+        <ul>
+            <li>✔ Full agent orchestration</li>
+            <li>✔ Memory Engine (JSONL, index, meta)</li>
+            <li>✔ File Engine with sandbox ops</li>
+            <li>✔ Automation: triggers & pipelines</li>
+            <li>✔ Local + external model routing</li>
+            <li>✔ Developer-grade CLI suite</li>
         </ul>
-      </div>
-    </section>
+        <button class="primary-btn">Buy Pro</button>
+    </div>
 
-    <section class="section pricing">
-      <div class="tier">
-        <h3>Starter</h3>
-        <p class="headline" style="font-size:28px;">$19</p>
-        <p class="small">per user / month</p>
-        <ul class="checklist">
-          <li><span class="check">✓</span> 2 agents & 1 memory space</li>
-          <li><span class="check">✓</span> Local-only execution</li>
-          <li><span class="check">✓</span> Desktop app + live demo</li>
+    <div class="pricing-card">
+        <h2>Enterprise</h2>
+        <p class="price">Custom</p>
+        <ul>
+            <li>✔ Multi-workspace cloud federation</li>
+            <li>✔ Team-wide memory clusters</li>
+            <li>✔ Governance toolkit</li>
+            <li>✔ Training & on-prem deployment</li>
+            <li>✔ 24/7 support & integration</li>
         </ul>
-        <a class="cta secondary" href="contact.html">Start trial</a>
-      </div>
-      <div class="tier">
-        <h3>Pro</h3>
-        <p class="headline" style="font-size:28px;">$59</p>
-        <p class="small">per user / month</p>
-        <ul class="checklist">
-          <li><span class="check">✓</span> Unlimited agents</li>
-          <li><span class="check">✓</span> GPU acceleration + WebGPU</li>
-          <li><span class="check">✓</span> Team projects and audit logs</li>
-          <li><span class="check">✓</span> Priority support</li>
-        </ul>
-        <a class="cta" href="contact.html">Talk to sales</a>
-      </div>
-      <div class="tier">
-        <h3>Enterprise</h3>
-        <p class="headline" style="font-size:28px;">Custom</p>
-        <p class="small">annual agreements</p>
-        <ul class="checklist">
-          <li><span class="check">✓</span> Dedicated orchestration clusters</li>
-          <li><span class="check">✓</span> Air-gapped offline deployments</li>
-          <li><span class="check">✓</span> SSO, SCIM, SOC2 reporting</li>
-          <li><span class="check">✓</span> White-glove onboarding</li>
-        </ul>
-        <a class="cta" href="contact.html">Request proposal</a>
-      </div>
-    </section>
-  </main>
+        <button class="primary-btn">Contact Sales</button>
+    </div>
 
-  <footer class="wrapper footer">INTERLINK™ 2.0 — Pricing</footer>
-  <script src="public/assets/js/main.js"></script>
+</section>
+
+<footer class="footer">
+    <p>INTERLINK™ — Unified AI Workspace</p>
+</footer>
+
+<script src="assets/scripts/script.js"></script>
 </body>
 </html>
