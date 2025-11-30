@@ -258,6 +258,76 @@ body {
   border-radius: 10px;
 }
 
+/* INVEST PAGE */
+.invest-content {
+  padding: 80px 0 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.invest-content h2 {
+  font-size: 2rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.invest-content p {
+  color: var(--light-gray);
+  max-width: 950px;
+}
+
+.invest-content ul {
+  color: var(--light-gray);
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.invest-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px 18px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+.invest-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.invest-box li {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.invest-box p {
+  color: var(--light-gray);
+  margin: 0;
+}
+
+.roadmap {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 4px;
+}
+
+.roadmap li {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--gray);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--light-gray);
+  font-weight: 600;
+}
+
 /* BUTTONS */
 .btn-primary,
 .btn-secondary {
