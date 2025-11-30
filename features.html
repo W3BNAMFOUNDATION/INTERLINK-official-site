@@ -190,6 +190,101 @@
       <p>INTERLINK™ unifies everything required for modern AI operations into one seamless, secure, sovereign system designed for companies, creators, developers, institutions, and enterprise-grade automation.</p>
       <p>This page is the high-level entry point for investors, partners, and users.</p>
     </section>
+
+    <section class="section panel">
+      <p class="tagline">INTERLINK™ — Universal Ingest Engine</p>
+      <h2>🛰️ Ingest Engine Deep Dive</h2>
+      <p>The ingest engine is the sovereign, multimodal capture system that transforms any type of information into structured, searchable knowledge. It is the input gateway for the entire INTERLINK™ ecosystem, replacing dozens of external tools with one unified pipeline.</p>
+
+      <div class="grid-2">
+        <div>
+          <h3>🎯 Purpose</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Capture data from any source</li>
+            <li><span class="check">•</span> Normalize, chunk, and clean content</li>
+            <li><span class="check">•</span> Extract text, metadata, and embeddings</li>
+            <li><span class="check">•</span> Push everything into the Memory Engine</li>
+            <li><span class="check">•</span> Power search, automation, agents, and workflows</li>
+          </ul>
+        </div>
+        <div>
+          <h3>🧩 Supported Input Types</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Text: raw notes, logs, Markdown</li>
+            <li><span class="check">•</span> Documents: PDF, DOCX, TXT, EPUB, CSV, JSON</li>
+            <li><span class="check">•</span> Audio: WAV, MP3, M4A (Whisper.cpp or external ASR)</li>
+            <li><span class="check">•</span> Video: MP4 and web links with auto audio+transcript</li>
+            <li><span class="check">•</span> URLs: static and dynamic pages, articles, docs, posts</li>
+            <li><span class="check">•</span> Images: OCR for diagrams, screenshots, and document captures</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3>🔧 Internal Pipeline</h3>
+          <p class="small">Every ingest run follows the same deterministic flow to keep output consistent.</p>
+          <pre><code>RAW INPUT
+  ↓
+PREPROCESSOR (text cleaning, chunking)
+  ↓
+EXTRACTOR (PDF parser, OCR, ASR, HTML scraper)
+  ↓
+NORMALIZER (convert everything to clean text blocks)
+  ↓
+EMBEDDER (Ollama / DeepSeek / Groq encoder)
+  ↓
+MEMORY ENGINE (vector store + metadata)</code></pre>
+        </div>
+        <div>
+          <h3>⚙️ Processing Capabilities</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> PDF paragraphs, DOCX blocks, OCR extraction</li>
+            <li><span class="check">•</span> Link scraping with reader-friendly article extraction</li>
+            <li><span class="check">•</span> Automatic semantic chunking by boundaries and structure</li>
+            <li><span class="check">•</span> Embeddings via Ollama, DeepSeek, or Groq profiles</li>
+            <li><span class="check">•</span> Metadata packaging: source path, timestamp, ingest type, tags, checksums</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3>📡 Modes of Operation</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Offline Sovereign Mode: Whisper.cpp, local parsers, local OCR, Ollama embeddings</li>
+            <li><span class="check">•</span> Hybrid Mode: online ASR/OCR and external scrapers</li>
+            <li><span class="check">•</span> High-Performance Mode: GPU-accelerated OCR and Groq-accelerated embeddings</li>
+          </ul>
+        </div>
+        <div>
+          <h3>🧪 Example Commands</h3>
+          <p class="small">Declarative helpers keep ingest simple for every source.</p>
+          <pre><code>ingest.pdf("research/whitepaper.pdf")
+ingest.url("https://foundation.interlink/docs/intro")
+ingest.audio("meetings/briefing1.m4a")
+ingest.image("screenshots/error.png")
+ingest.folder("archive/2024/")</code></pre>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <h3>🛡️ Security & Integrity</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> All data processed inside the INTERLINK™ sandbox</li>
+            <li><span class="check">•</span> No external calls unless the active profile requires it</li>
+            <li><span class="check">•</span> Ingest logs stored in <code>/workspace/logs/ingest/</code></li>
+            <li><span class="check">•</span> Automatic checksum verification for every file</li>
+          </ul>
+        </div>
+        <div>
+          <h3>🏁 Integration With INTERLINK™</h3>
+          <p>The ingest engine is the origin point for agents, Memory Engine, search, automation, documentation, investor kits, and product intelligence dashboards. Every captured chunk becomes structured intelligence that stays sovereign.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="wrapper footer">INTERLINK™ — Capability overview</footer>
