@@ -52,6 +52,37 @@
     </section>
 
     <section class="section panel">
+      <p class="tagline">INTERLINK™ — CLI-Core</p>
+      <h2>Command-line interface for local control, testing, and automation.</h2>
+      <p class="subhead">Run agents, ingest data, issue raw prompts, and script pipelines from the terminal with the same message format used across the platform.</p>
+
+      <div class="grid-3" style="margin-top: 18px;">
+        <div class="panel">
+          <h3>Capabilities</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Run agents and launch ingest jobs</li>
+            <li><span class="check">•</span> Send raw prompts to any routed model</li>
+            <li><span class="check">•</span> Trigger pipelines and automation tasks</li>
+            <li><span class="check">•</span> Execute file operations through FS-Core</li>
+            <li><span class="check">•</span> Local-first workflows for testing and demos</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Usage examples</h3>
+          <pre><code>python interlink.py chat "hello"
+python interlink.py ingest file ./pdfs/report.pdf
+python interlink.py agent summarize workspace/ingest/*.pdf
+python interlink.py task run pipeline_alpha</code></pre>
+          <p class="small" style="margin-top: 8px;">Matches the same CLI syntax shown on the dedicated CLI page.</p>
+        </div>
+        <div class="panel">
+          <h3>Located at</h3>
+          <p class="small">Installed by the One-Shot Installer at <code>/cli/interlink.py</code> and exposed via the <code>/cli</code> route inside the control plane.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
       <p class="tagline">INTERLINK™ — System Overview</p>
       <h2>Unified AI operations layer combining agents, memory, and secure automation.</h2>
       <p class="subhead">INTERLINK™ ships as a single control plane built with FastAPI and the INTERLINK™ Router, blending multi-model agents, real-time memory, ingest pipelines, filesystem virtualization, automation, CLI execution, and a unified permissions plane.</p>
