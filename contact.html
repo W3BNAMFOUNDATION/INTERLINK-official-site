@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INTERLINK™ — Contact</title>
-  <link rel="icon" href="public/brand/logo.svg">
-  <link rel="stylesheet" href="public/assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTERLINK — Contact</title>
+  <link rel="stylesheet" href="assets/styles/style.css" />
 </head>
+
 <body>
-  <header>
-    <div class="wrapper navbar">
-      <div class="brand">
-        <a href="index.html" class="logo-link">
-          <img src="public/brand/logo.svg" alt="INTERLINK logo">
-          <span>INTERLINK™</span>
-        </a>
-      </div>
-      <nav class="nav-links">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <img src="assets/logo/logo.png" alt="INTERLINK Logo" class="logo-img" />
+      <nav class="nav">
         <a href="index.html">Home</a>
         <a href="features.html">Features</a>
         <a href="invest.html">Invest</a>
-        <a class="active" href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="wrapper">
-        <p class="tagline">Contact</p>
-        <h1>Contact INTERLINK™</h1>
-        <p class="subhead">Business inquiries, partnerships, enterprise licensing.</p>
-        <div class="btn-row">
-          <a class="cta" href="mailto:contact@interlink.ai">Email the team</a>
-          <a class="cta secondary" href="invest.html">Investor information</a>
-        </div>
-      </div>
-    </section>
+  <!-- HERO -->
+  <section class="hero hero-small">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="hero-subtitle">Get in touch with the INTERLINK team.</p>
+    </div>
+  </section>
 
-    <section class="wrapper content-section">
-      <div class="contact-grid">
-        <div class="panel contact-card">
-          <h3>Business &amp; Enterprise</h3>
-          <p class="small">Sales, deployments, and licensing.</p>
-          <a class="cta tertiary" href="mailto:contact@interlink.ai">contact@interlink.ai</a>
-        </div>
-        <div class="panel contact-card">
-          <h3>Investor Relations</h3>
-          <p class="small">Access materials and schedule briefings.</p>
-          <a class="cta tertiary" href="mailto:investors@interlink.ai">investors@interlink.ai</a>
-        </div>
-        <div class="panel contact-card">
-          <h3>Partnerships</h3>
-          <p class="small">OEM, integrations, and channel partners.</p>
-          <a class="cta tertiary" href="mailto:partners@interlink.ai">partners@interlink.ai</a>
-        </div>
-        <div class="panel contact-card">
-          <h3>Technical Support</h3>
-          <p class="small">Production support and SLA coverage.</p>
-          <a class="cta tertiary" href="mailto:support@interlink.ai">support@interlink.ai</a>
-        </div>
-      </div>
+  <!-- CONTACT INFO -->
+  <section class="section">
+    <div class="container">
+      <h2>Business Inquiries</h2>
+      <p>
+        For enterprise deployments, investor relations, and partnership opportunities,
+        reach out to us using the information below:
+      </p>
 
-      <div class="response-note panel">
-        <h3>Message the team</h3>
-        <p>We respond to all inquiries within <strong>24–48 hours</strong>. Share your deployment goals or integration requirements and we will match you with the right specialist.</p>
-        <div class="chip-row">
-          <span class="chip">Enterprise pilots</span>
-          <span class="chip">Security reviews</span>
-          <span class="chip">Deployment planning</span>
-          <span class="chip">Support onboarding</span>
-        </div>
-      </div>
-    </section>
-  </main>
+      <ul class="arch-list">
+        <li>📧 Email: <strong>contact@interlink.ai</strong></li>
+        <li>📧 Investor Desk: <strong>invest@interlink.ai</strong></li>
+        <li>📧 Enterprise Support: <strong>enterprise@interlink.ai</strong></li>
+      </ul>
 
-  <footer class="wrapper footer">© 2025 INTERLINK™ — All Rights Reserved</footer>
-  <script src="public/assets/js/main.js"></script>
+      <p class="mt-2">We typically respond within 48 hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM (STATIC) -->
+  <section class="section-alt">
+    <div class="container">
+      <h2>Send a Message</h2>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+
+      <p class="form-note">
+        *This form is static and does not send emails yet. It is included for layout.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      INTERLINK — Sovereign AI Infrastructure • © 2025
+    </div>
+  </footer>
+
+  <script src="assets/scripts/script.js"></script>
 </body>
 </html>
