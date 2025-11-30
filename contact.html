@@ -1,95 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INTERLINK — Contact</title>
-  <link rel="stylesheet" href="assets/styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERLINK™ — Contact</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <img src="assets/logo/logo.png" alt="INTERLINK Logo" class="logo-img" />
-        <span>INTERLINK</span>
-      </div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
+
+<header class="navbar">
+    <img src="assets/logo/logo.png" class="nav-logo" alt="INTERLINK logo" />
+    <nav>
+        <a href="index.html">Overview</a>
         <a href="features.html">Features</a>
-        <a href="invest.html">Invest</a>
+        <a href="install.html">Install</a>
+        <a href="docs.html">Docs</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="compare.html">Compare</a>
+        <a href="demo.html">Demo</a>
         <a href="contact.html" class="active">Contact</a>
-      </nav>
+    </nav>
+</header>
+
+<section class="hero hero-compact">
+    <h1>Contact Us</h1>
+    <p>For partnerships, enterprise deployments, or investor inquiries.</p>
+</section>
+
+<section class="container contact-section">
+
+    <div class="contact-card">
+        <h2>📩 Email</h2>
+        <p>General inquiries: <b>hello@interlink.so</b></p>
+        <p>Support &amp; integration: <b>support@interlink.so</b></p>
+        <p>Investors: <b>invest@interlink.so</b></p>
     </div>
-  </header>
 
-  <!-- CONTACT -->
-  <main class="section contact-page">
-    <div class="container contact-layout">
-      <div class="contact-details">
-        <p class="eyebrow">We're here to help</p>
-        <h1>Contact INTERLINK</h1>
-        <p class="contact-lede">
-          Reach out for enterprise access, partnership discussions, or product questions. Our team responds within one business day.
-        </p>
-
-        <form class="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" placeholder="Your name" required />
-              <p class="error-text" data-error-for="name"></p>
-            </div>
-            <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" placeholder="you@example.com" required />
-              <p class="error-text" data-error-for="email"></p>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="6" placeholder="Tell us about your needs" required></textarea>
-            <p class="error-text" data-error-for="message"></p>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn-primary">Send Message</button>
-            <p class="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
-      </div>
-
-      <div class="contact-card">
-        <h2>Direct contact</h2>
-        <p>Email us directly and we'll route your request to the right team.</p>
-        <ul class="contact-info">
-          <li>
-            <span class="contact-label">General</span>
-            <strong>contact@interlink.ai</strong>
-          </li>
-          <li>
-            <span class="contact-label">Enterprise</span>
-            <strong>enterprise@interlink.ai</strong>
-          </li>
-          <li>
-            <span class="contact-label">Investors</span>
-            <strong>invest@interlink.ai</strong>
-          </li>
-        </ul>
-        <p class="contact-note">Prefer a call? Mention it in your message and we'll schedule time.</p>
-      </div>
+    <div class="contact-card">
+        <h2>🌐 LinkedIn</h2>
+        <p>Follow the official page:</p>
+        <a href="#" class="primary-btn">LinkedIn Profile</a>
     </div>
-  </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      INTERLINK — Sovereign AI Infrastructure • © 2025
+    <div class="contact-card">
+        <h2>🏢 Company</h2>
+        <p>INTERLINK™ — Unified AI Workspace</p>
+        <p>W3BNAM Foundation</p>
+        <p>Amsterdam, NL</p>
     </div>
-  </footer>
 
-  <script src="assets/scripts/script.js"></script>
+</section>
+
+<footer class="footer">
+    <p>INTERLINK™ — Unified AI Workspace</p>
+</footer>
+
+<script src="assets/scripts/script.js"></script>
 </body>
 </html>

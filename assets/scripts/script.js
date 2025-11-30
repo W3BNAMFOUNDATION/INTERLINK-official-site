@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Automatic Active Navbar Highlight
-  const navLinks = document.querySelectorAll(".nav a");
+  const navLinks = document.querySelectorAll(".nav a, .navbar nav a");
   const current = window.location.pathname.split("/").pop() || "index.html";
 
   navLinks.forEach((link) => {
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Header shadow on scroll
-  const header = document.querySelector(".header");
+  const header = document.querySelector(".header") || document.querySelector(".navbar");
   const toggleShadow = () => {
     if (!header) return;
     header.style.boxShadow = window.scrollY > 20 ? "0 2px 10px rgba(0,0,0,0.4)" : "none";
