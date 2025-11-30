@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERLINK™ 2.0 — Unified AI Workspace</title>
+  <link rel="icon" href="public/brand/logo.svg">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrapper navbar">
+      <div class="brand">
+        <img src="public/brand/logo.svg" alt="INTERLINK logo">
+        <span>INTERLINK™ 2.0</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Overview</a>
+        <a href="features.html">Features</a>
+        <a href="install.html">Install</a>
+        <a href="docs.html">Docs</a>
+        <a href="demo.html">Demo</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="compare.html">Compare</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="hero">
+      <div>
+        <p class="tagline">Unified AI operations</p>
+        <h1 class="headline">One workspace for agents, memory, knowledge, files, and automation.</h1>
+        <p class="subhead">INTERLINK™ 2.0 orchestrates multimodal AIs, long-term vector memory, ingestion, and WebGL visualization inside a single operating layer.</p>
+        <div class="badges">
+          <span class="badge">Multi-model agents</span>
+          <span class="badge">WebGPU-ready</span>
+          <span class="badge">Offline + online LLMs</span>
+        </div>
+        <div class="btn-row">
+          <a class="cta" href="install.html">Download for Windows/Linux</a>
+          <a class="cta secondary" href="demo.html">Launch browser demo</a>
+        </div>
+        <div class="stats" style="margin-top:16px;">
+          <div class="stat">30s install — offline ready</div>
+          <div class="stat">Federated memory across projects</div>
+          <div class="stat">Secure sandboxed file ops</div>
+        </div>
+      </div>
+      <div class="hero-visual panel">
+        <canvas id="demo-canvas" width="520" height="360"></canvas>
+        <div style="position:absolute;bottom:18px;left:18px;color:var(--muted);font-size:13px;">Live GPU ripple shader preview</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-3">
+        <div class="panel">
+          <div class="icon">1</div>
+          <h3>Agents that collaborate</h3>
+          <p>Coordinate multiple reasoning engines with shared context, role-based behaviors, and a unified chat surface.</p>
+        </div>
+        <div class="panel">
+          <div class="icon">2</div>
+          <h3>Memory that persists</h3>
+          <p>Attach long-term embeddings to any project. Ingest PDFs, URLs, repos, and videos into the vector memory engine.</p>
+        </div>
+        <div class="panel">
+          <div class="icon">3</div>
+          <h3>Automation that ships</h3>
+          <p>Drive file ops, web automation, and CLI workflows through a single permissions-aware control plane.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <div class="panel">
+          <h2>Built for teams, trusted by security.</h2>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Fine-grained scopes for file, net, and memory operations</li>
+            <li><span class="check">✓</span> Offline-first bundles for air-gapped networks</li>
+            <li><span class="check">✓</span> Observability: session playback, traces, and metrics</li>
+            <li><span class="check">✓</span> Configurable vector stores and GPU acceleration</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Interlink auto-evolution.</h2>
+          <p class="small">Let agents improve themselves. The auto-evolution module scores outputs, retrains prompts, and redeploys configurations without leaving the workspace.</p>
+          <div class="timeline">
+            <div class="item">
+              <div class="phase">Capture</div>
+              <div>Session transcripts, file diffs, and telemetry captured in-memory.</div>
+            </div>
+            <div class="item">
+              <div class="phase">Evaluate</div>
+              <div>Quality benchmarks against golden tasks and live regressions.</div>
+            </div>
+            <div class="item">
+              <div class="phase">Evolve</div>
+              <div>Deploy tuned agents back into the workspace with rollback safety.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrapper footer">
+    <div>INTERLINK™ — Unified AI Workspace · Built for agents, memory, and automation.</div>
+  </footer>
+  <script src="public/assets/js/main.js"></script>
+  <script src="public/assets/js/demo.js"></script>
+</body>
+</html>
