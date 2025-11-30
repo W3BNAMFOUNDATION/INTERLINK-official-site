@@ -17,6 +17,7 @@ The public website for INTERLINK™, the unified AI workspace for agents, memory
 - `public/assets/js/demo.js` — WebGL shader powering the live preview
 - `public/brand/logo.svg` — INTERLINK™ emblem
 - `public/brand/brand-guide.md` — palette and typography guidance
+- `service_profiles.yaml` — defaults for Ollama, DeepSeek, Groq, and OpenAI endpoints
 
 ## Running locally
 This is a static site. Open `index.html` in your browser or serve the directory with any static server:
@@ -26,6 +27,11 @@ python -m http.server 8080
 ```
 
 Then navigate to `http://localhost:8080` to explore all pages and the live WebGL demo.
+
+## Service profiles
+- Edit `service_profiles.yaml` to swap base URLs, models, or API keys for your target providers.
+- Profiles include sensible defaults for local-first Ollama as well as cloud providers (DeepSeek, Groq, OpenAI).
+- The `models` block defines named presets (e.g., `default`, `high_precision`, `local_fast`) that your backend or automation can reference.
 
 ## Deployment
 The included GitHub Actions workflow (`.github/workflows/static.yml`) publishes the site to GitHub Pages on pushes to `main`.
