@@ -80,78 +80,90 @@
     </section>
 
     <section class="section panel">
-      <p class="tagline">INTERLINK™ — Secure Filesystem Engine</p>
-      <h2>Hardened, sandboxed I/O for every agent, memory job, and automation pipeline.</h2>
-      <p class="subhead">The filesystem engine is the controlled access layer for the entire INTERLINK™ ecosystem, delivering deterministic paths, namespaced workspaces, and automatic cleanup across Windows, Linux, and Mac.</p>
-      <div class="grid-2" style="margin-top: 18px;">
-        <div>
-          <h3>Core principles</h3>
-          <ul class="checklist">
-            <li><span class="check">✓</span> Sandboxed operations with read/write isolation per agent</li>
-            <li><span class="check">✓</span> Deterministic, normalized file paths with traversal protection</li>
-            <li><span class="check">✓</span> Namespaced workspaces for ingest, memory, automation, and uploads</li>
-            <li><span class="check">✓</span> Secure temp directories with automatic expiration</li>
-            <li><span class="check">✓</span> Cross-platform compatibility for sovereign and offline deployments</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Security model</h3>
-          <ul class="checklist">
-            <li><span class="check">•</span> Path whitelisting to restrict access to approved directories</li>
-            <li><span class="check">•</span> File type enforcement to block unsafe executables</li>
-            <li><span class="check">•</span> Quotas to prevent runaway storage and oversized writes</li>
-            <li><span class="check">•</span> UTF-8 normalization and BOM removal on reads</li>
-            <li><span class="check">•</span> Atomic writes with built-in versioning for corruption-safe saves</li>
-          </ul>
-        </div>
-      </div>
+      <p class="tagline">INTERLINK™ — FS-Core</p>
+      <h2>Secure Filesystem Layer for sandboxed, deterministic access.</h2>
+      <p class="subhead">FS-Core is the hardened I/O foundation for every INTERLINK™ module. It normalizes paths, blocks traversal, enforces file policies, and keeps agent sandboxes isolated across Windows, Linux, and Mac.</p>
       <div class="grid-2" style="margin-top: 18px;">
         <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
-          <h3>Filesystem layout</h3>
-          <p class="small">Namespaced directories keep ingest, memory, and automation work isolated from one another.</p>
+          <h3>Core workspace layout</h3>
+          <p class="small">Only these namespaced paths are accessible to agents, memory jobs, automation, and uploads.</p>
           <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
 /workspace/
   /ingest/
   /memory/
-  /agents/
-  /automation/
   /tmp/
+  /agents/
   /uploads/
+  /automation/
           </pre>
+          <table class="table" style="margin-top: 12px;">
+            <tr><th>Folder</th><th>Purpose</th></tr>
+            <tr><td>ingest/</td><td>Raw files entering the ingest pipeline.</td></tr>
+            <tr><td>memory/</td><td>Long-term JSONL shards and vector indexes.</td></tr>
+            <tr><td>tmp/</td><td>Ephemeral work files cleared on each task.</td></tr>
+            <tr><td>agents/</td><td>Namespaced agent working directories.</td></tr>
+            <tr><td>uploads/</td><td>Validated user uploads with type checks.</td></tr>
+            <tr><td>automation/</td><td>Task manifests, triggers, and scripted jobs.</td></tr>
+          </table>
         </div>
-        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
-          <h3>Built-in tools</h3>
+        <div>
+          <h3>Security architecture</h3>
           <ul class="checklist">
-            <li><span class="check">✓</span> Safe directory creation, listing, and removal</li>
-            <li><span class="check">✓</span> Automated temp cleanup and sandbox resets</li>
-            <li><span class="check">✓</span> MIME detection and upload validation</li>
-            <li><span class="check">✓</span> Workspace-scoped access policies for agents</li>
-            <li><span class="check">✓</span> API and CLI hooks for controlled file commands</li>
+            <li><span class="check">✓</span> Path normalization with traversal blocking for every read/write.</li>
+            <li><span class="check">✓</span> Whitelisted base paths limited to <code>/workspace/*</code>.</li>
+            <li><span class="check">✓</span> Sandboxed execution with per-agent isolation and scoped quotas.</li>
+            <li><span class="check">✓</span> File-type validation that rejects executables (<code>.exe</code>, <code>.sh</code>, <code>.ps1</code>, <code>.dll</code>, <code>.bin</code>, <code>.so</code>).</li>
+            <li><span class="check">✓</span> Automatic cleanup for <code>/workspace/tmp/</code> on each task start.</li>
+            <li><span class="check">✓</span> Deterministic folder layout to guarantee reproducible paths.</li>
           </ul>
+          <div class="table-note" style="margin-top: 12px;">Offline and air-gapped deployments require no external dependencies or cloud access.</div>
         </div>
       </div>
       <div class="grid-2" style="margin-top: 18px;">
         <div>
+          <h3>Capabilities</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Safe reads/writes with enforced size limits and normalization.</li>
+            <li><span class="check">•</span> Directory creation, listing, and deletion within whitelisted roots.</li>
+            <li><span class="check">•</span> Controlled uploads with MIME validation.</li>
+            <li><span class="check">•</span> Sandbox resets to clear temp files and restore a clean state.</li>
+          </ul>
+        </div>
+        <div>
           <h3>Sample operations</h3>
           <p class="small">Deterministic commands used by agents, ingest jobs, and automation scripts.</p>
           <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
-filesystem.write("workspace/notes/test.txt", "Hello World")
-content = filesystem.read("workspace/notes/test.txt")
-files = filesystem.list("workspace/notes/")
-filesystem.reset()
+fs.write("tmp/test.txt", "Hello INTERLINK")
+content = fs.read("tmp/test.txt")
+items = fs.list("memory/")
+fs.mkdir("agents/agent7/")
+fs.delete("tmp/task-cache.txt")
+fs.reset()
           </pre>
         </div>
-        <div>
-          <h3>Integrations</h3>
+      </div>
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="panel" style="background: rgba(255, 255, 255, 0.02);">
+          <h3>Module integrations</h3>
           <table class="table">
             <tr><th>Module</th><th>Interaction</th></tr>
-            <tr><td>Ingest Engine</td><td>Provides file-access for ingestion pipelines.</td></tr>
-            <tr><td>Memory Engine</td><td>Stores vector memory snapshots and structured files.</td></tr>
-            <tr><td>Agents</td><td>Run within restricted sandboxes with scoped permissions.</td></tr>
-            <tr><td>Automation Engine</td><td>Executes scheduled file operations and cleanup.</td></tr>
-            <tr><td>CLI</td><td>Issues controlled file commands with audited scopes.</td></tr>
+            <tr><td>Ingest Engine</td><td>Reads raw files from <code>ingest/</code> with validated access.</td></tr>
+            <tr><td>Memory Engine</td><td>Writes vector shards and structured snapshots in <code>memory/</code>.</td></tr>
+            <tr><td>Agents</td><td>Operate inside <code>agents/*</code> sandboxes with scoped permissions.</td></tr>
+            <tr><td>Automation Engine</td><td>Runs manifest-driven jobs in <code>automation/</code> with cleanup hooks.</td></tr>
+            <tr><td>CLI</td><td>Provides user-facing commands against the FS-Core sandbox.</td></tr>
           </table>
-          <p class="small" style="margin-top: 10px;">Local-only operations keep sovereign deployments offline while maintaining durability.</p>
+          <p class="small" style="margin-top: 10px;">All operations stay local to the sovereign workspace for regulated deployments.</p>
+        </div>
+        <div>
+          <h3>Testing the sandbox</h3>
+          <p class="small">Use built-in commands to validate access before connecting agents and automations.</p>
+          <pre style="white-space: pre-wrap; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border); color: var(--text);">
+fs.write("automation/output.json", "{...}")
+fs.read("automation/output.json")
+fs.list("uploads/")
+fs.reset()
+          </pre>
         </div>
       </div>
     </section>
