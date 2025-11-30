@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install INTERLINK™</title>
+  <link rel="icon" href="public/brand/logo.svg">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrapper navbar">
+      <div class="brand">
+        <img src="public/brand/logo.svg" alt="INTERLINK logo">
+        <span>INTERLINK™ 2.0</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Overview</a>
+        <a href="features.html">Features</a>
+        <a href="install.html">Install</a>
+        <a href="docs.html">Docs</a>
+        <a href="demo.html">Demo</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="compare.html">Compare</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="section hero">
+      <div>
+        <p class="tagline">Installers</p>
+        <h1 class="headline">Windows + Linux installers with offline bundles.</h1>
+        <p class="subhead">Pick your platform, run one command, and start orchestrating agents in under a minute.</p>
+        <div class="btn-row">
+          <a class="cta" href="#windows">Windows .exe</a>
+          <a class="cta secondary" href="#linux">Linux AppImage</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Included in installer</h3>
+        <ul class="checklist">
+          <li><span class="check">✓</span> INTERLINK™ core runtime</li>
+          <li><span class="check">✓</span> Offline embeddings pack</li>
+          <li><span class="check">✓</span> WebGL visualization assets</li>
+          <li><span class="check">✓</span> Demo workspace + sample agents</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="windows">
+      <div class="panel">
+        <h2>Windows install</h2>
+        <p>Download the signed installer and run as administrator. The installer will configure GPU acceleration and register the workspace service.</p>
+        <div class="grid-2">
+          <div>
+            <p class="small">PowerShell</p>
+            <div class="panel" style="background: rgba(255,255,255,0.02);">
+              <code>irm https://interlink.ai/install/windows | iex</code>
+              <div style="margin-top:10px;"><button class="cta secondary" data-copy="irm https://interlink.ai/install/windows | iex">Copy command</button></div>
+            </div>
+          </div>
+          <div>
+            <p class="small">Manual</p>
+            <p>Download <a href="https://interlink.ai/downloads/InterlinkSetup.exe">InterlinkSetup.exe</a> and follow the guided wizard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="linux">
+      <div class="panel">
+        <h2>Linux install</h2>
+        <p>Works with Ubuntu 20.04+, Debian 11+, Fedora 38+. Includes WebGPU-ready binaries and optional CUDA hooks.</p>
+        <div class="grid-2">
+          <div>
+            <p class="small">Shell</p>
+            <div class="panel" style="background: rgba(255,255,255,0.02);">
+              <code>curl -sSL https://interlink.ai/install/linux.sh | bash</code>
+              <div style="margin-top:10px;"><button class="cta secondary" data-copy="curl -sSL https://interlink.ai/install/linux.sh | bash">Copy command</button></div>
+            </div>
+          </div>
+          <div>
+            <p class="small">Manual</p>
+            <p>Download <a href="https://interlink.ai/downloads/Interlink.AppImage">Interlink.AppImage</a>, mark as executable, and run to launch the workspace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrapper footer">INTERLINK™ — Installer hub</footer>
+  <script src="public/assets/js/main.js"></script>
+</body>
+</html>

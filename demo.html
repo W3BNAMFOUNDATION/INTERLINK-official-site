@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERLINK™ Demo</title>
+  <link rel="icon" href="public/brand/logo.svg">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrapper navbar">
+      <div class="brand">
+        <img src="public/brand/logo.svg" alt="INTERLINK logo">
+        <span>INTERLINK™ 2.0</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Overview</a>
+        <a href="features.html">Features</a>
+        <a href="install.html">Install</a>
+        <a href="docs.html">Docs</a>
+        <a href="demo.html">Demo</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="compare.html">Compare</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="section hero">
+      <div>
+        <p class="tagline">Live Preview</p>
+        <h1 class="headline">WebGL workspace simulation</h1>
+        <p class="subhead">Interact with a GPU-driven visualization that mirrors the INTERLINK™ desktop canvas. All shaders run locally in your browser.</p>
+        <div class="btn-row">
+          <a class="cta" href="install.html">Get the full desktop app</a>
+          <a class="cta secondary" href="pricing.html">See plans</a>
+        </div>
+      </div>
+      <div class="hero-visual panel" style="min-height:380px;">
+        <canvas id="demo-canvas" width="640" height="380"></canvas>
+        <div style="position:absolute;bottom:18px;left:18px;color:var(--muted);font-size:13px;">Interactive ripple shader running on WebGL.</div>
+      </div>
+    </section>
+
+    <section class="section grid-2">
+      <div class="panel">
+        <h3>What you're seeing</h3>
+        <p>Dynamic gradient fields represent data streams between agents, memory calls, and automation tasks. The glow intensity increases as simulated throughput rises.</p>
+        <ul class="checklist">
+          <li><span class="check">✓</span> Real WebGL pipeline (vertex + fragment shaders)</li>
+          <li><span class="check">✓</span> Adaptive to your GPU for smooth frames</li>
+          <li><span class="check">✓</span> Mirrors the visualization module bundled in the installer</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Next steps</h3>
+        <p>Download the desktop version to access full agent orchestration, memory ingestion, and automation control with the same visualization layer.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrapper footer">INTERLINK™ — Demo</footer>
+  <script src="public/assets/js/main.js"></script>
+  <script src="public/assets/js/demo.js"></script>
+</body>
+</html>
