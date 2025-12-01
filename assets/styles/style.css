@@ -1077,3 +1077,21 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* INTERLINK Premium Logo 3D Effect */
+.interlink-logo {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(0, 180, 255, 0.55));
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+.interlink-logo:hover {
+  transform: translateY(-3px) scale(1.03);
+  filter: drop-shadow(0 0 18px rgba(0, 220, 255, 0.75));
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
