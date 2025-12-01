@@ -69,6 +69,66 @@ body {
   transform: translateY(-1px);
 }
 
+/* NEW NAV HEADER */
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 20px;
+}
+
+.logo-area {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.logo {
+  height: 42px;
+  width: 42px;
+  object-fit: contain;
+}
+
+.logo-title {
+  font-size: 1.05rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus-visible,
+.nav-menu a.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
 /* GLOBAL HEADER */
 .site-header {
   position: sticky;
