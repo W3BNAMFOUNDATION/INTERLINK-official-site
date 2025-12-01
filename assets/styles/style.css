@@ -448,6 +448,37 @@ body {
   color: var(--light-gray);
 }
 
+.two-col,
+.three-col {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.three-col {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stat-list,
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 10px;
+  color: var(--light-gray);
+}
+
+.stat-list strong,
+.contact-list strong {
+  color: var(--white);
+}
+
+.note {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+}
+
 /* ARCH LIST */
 .arch-list {
   margin-top: 20px;
