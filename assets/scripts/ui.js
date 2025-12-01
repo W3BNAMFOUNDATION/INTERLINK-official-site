@@ -1,17 +1,25 @@
-const applyPathPrefix = (root) => {
-  const isNested = window.location.pathname.includes('/pages/');
-  const prefix = isNested ? '../' : '';
+const getBasePath = () => {
+  const script = document.currentScript;
+  if (!script) return '';
+  const [base] = script.src.split('assets/scripts/ui.js');
+  return base || '';
+};
+
+const applyPathPrefix = (root, basePath) => {
+  if (!basePath) return;
 
   root.querySelectorAll('[data-nav]').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('http')) return;
-    link.setAttribute('href', `${prefix}${href}`);
+    const resolved = new URL(href, basePath);
+    link.setAttribute('href', resolved.href);
   });
 
   root.querySelectorAll('[data-asset-src]').forEach((asset) => {
     const src = asset.getAttribute('data-asset-src');
     if (!src) return;
-    asset.setAttribute('src', `${prefix}${src}`);
+    const resolved = new URL(src, basePath);
+    asset.setAttribute('src', resolved.href);
   });
 };
 
@@ -20,7 +28,8 @@ const highlightActive = (root) => {
   root.querySelectorAll('a').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href) return;
-    if (href.endsWith(current)) {
+    const linkPath = new URL(href, window.location.href).pathname.split('/').pop();
+    if (linkPath === current) {
       link.classList.add('active');
     }
   });
@@ -35,7 +44,8 @@ const insertComponent = async (path, position) => {
     wrapper.innerHTML = html.trim();
     const fragment = wrapper.firstElementChild;
     if (!fragment) return;
-    applyPathPrefix(fragment);
+    const basePath = getBasePath();
+    applyPathPrefix(fragment, basePath);
     document.body.insertAdjacentElement(position, fragment);
     highlightActive(fragment);
   } catch (error) {
@@ -44,10 +54,9 @@ const insertComponent = async (path, position) => {
 };
 
 const bootstrapUI = () => {
-  const isNested = window.location.pathname.includes('/pages/');
-  const base = isNested ? '../' : '';
-  insertComponent(`${base}components/header.html`, 'afterbegin');
-  insertComponent(`${base}components/footer.html`, 'beforeend');
+  const basePath = getBasePath();
+  insertComponent(`${basePath}components/header.html`, 'afterbegin');
+  insertComponent(`${basePath}components/footer.html`, 'beforeend');
 };
 
 document.addEventListener('DOMContentLoaded', bootstrapUI);
