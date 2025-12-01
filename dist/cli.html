@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERLINK™ — CLI-Core</title>
+  <link rel="icon" href="public/brand/logo.svg">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="./assets/i18n/i18n.css">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+</head>
+<body>
+  <main class="wrapper">
+    <section class="section hero">
+      <div>
+        <p class="tagline">INTERLINK™ — Command Line Interface (CLI-Core)</p>
+        <h1 class="headline">Unified control for agents, memory, ingestion, and automation.</h1>
+        <p class="subhead">Send AI messages, ingest files, search memory, run agents, and orchestrate automation with the same offline-first syntax used across the platform.</p>
+        <div class="badges">
+          <span class="badge">Offline sovereign</span>
+          <span class="badge">Deterministic workflows</span>
+          <span class="badge">Developer + operator ready</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Quick start</h3>
+        <p class="small">Installed automatically by the INTERLINK™ One-Shot Installer.</p>
+        <pre><code>python interlink.py chat "hello"</code></pre>
+        <p class="small" style="margin-top: 8px;">Binary lives at <code>/cli/interlink.py</code> for direct calls.</p>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🎯 Purpose</h2>
+      <p class="subhead">The CLI enables fast local testing, full backend control, and scriptable operations without the web panel.</p>
+      <div class="grid-3" style="margin-top: 16px;">
+        <div>
+          <h3>Developer velocity</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Deterministic, reproducible tasks</li>
+            <li><span class="check">•</span> Single syntax across services</li>
+            <li><span class="check">•</span> Instant feedback for pipelines</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Operator control</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Full backend oversight</li>
+            <li><span class="check">•</span> Debugging and inspection tools</li>
+            <li><span class="check">•</span> Air-gapped safe execution</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Automation ready</h3>
+          <ul class="checklist">
+            <li><span class="check">•</span> Scriptable commands</li>
+            <li><span class="check">•</span> Repeatable workflows</li>
+            <li><span class="check">•</span> Seamless agent triggers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🧠 What it can do</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Send AI messages</h3>
+          <p class="small">Chat with DeepSeek, Ollama, Groq, OpenAI, or any routed model with the same prompt format.</p>
+          <pre><code>python interlink.py chat deepseek "Explain sovereign AI."
+python interlink.py chat ollama  "Hello world"
+python interlink.py chat groq    "Summarize this text..."
+python interlink.py chat openai  "What is INTERLINK?"</code></pre>
+        </div>
+        <div class="panel">
+          <h3>Ingest anything</h3>
+          <p class="small">Run the safe ingest pipeline for files, URLs, or inline text with automatic cleaning and embedding.</p>
+          <pre><code>python interlink.py ingest file ./pdfs/report.pdf
+python interlink.py ingest url "https://example.com"
+python interlink.py ingest text "My notes go here..."</code></pre>
+        </div>
+        <div class="panel">
+          <h3>Search memory</h3>
+          <p class="small">Query vector memory and return semantic chunks with embeddings and relevance scores.</p>
+          <pre><code>python interlink.py memory "quantum encryption"</code></pre>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Run agents</h3>
+          <p class="small">Trigger summarization, classification, and any automation-ready agent profile.</p>
+          <pre><code>python interlink.py agent summarize "workspace/ingest/*.pdf"
+python interlink.py agent classify  "workspace/uploads/*.txt"</code></pre>
+        </div>
+        <div class="panel">
+          <h3>Filesystem commands</h3>
+          <p class="small">Use the FS-Core sandbox to list, read, clean, or reset workspace directories.</p>
+          <pre><code>python interlink.py fs list memory/
+python interlink.py fs read memory/index.json
+python interlink.py fs delete tmp/*
+python interlink.py fs reset</code></pre>
+        </div>
+        <div class="panel">
+          <h3>Automation + debug</h3>
+          <p class="small">Execute tasks and inspect every service from the terminal.</p>
+          <pre><code>python interlink.py task run auto_pdf_pipeline
+python interlink.py debug services
+python interlink.py debug workspace
+python interlink.py debug memory
+python interlink.py debug ingest</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🧱 Architecture</h2>
+      <p class="small">CLI-Core routes every command through the same universal message format shared with the backend, frontend, automation, and agents.</p>
+      <pre><code>CLI-Core
+  → Route-Core
+  → Ingest Engine
+  → Memory Engine
+  → Agents
+  → FS-Core
+  → Automation Engine</code></pre>
+    </section>
+
+    <section class="section panel">
+      <h2>📋 Example workflow</h2>
+      <p>Combine ingest, retrieval, and reasoning in a few lines.</p>
+      <pre><code>python interlink.py ingest file ./uploads/alpha.pdf
+python interlink.py memory "sovereign architecture"
+python interlink.py chat deepseek "Summarize the findings"</code></pre>
+    </section>
+
+    <section class="section panel">
+      <h2>🛡️ Security posture</h2>
+      <div class="grid-2">
+        <div>
+          <ul class="checklist">
+            <li><span class="check">✓</span> No shell execution</li>
+            <li><span class="check">✓</span> No uncontrolled paths</li>
+            <li><span class="check">✓</span> No network calls unless permitted</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="checklist">
+            <li><span class="check">✓</span> Sandboxed file access via FS-Core</li>
+            <li><span class="check">✓</span> Fully offline compatible</li>
+            <li><span class="check">✓</span> Unified governance with the web UI</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/scripts/ui.js"></script>
+  <script src="public/assets/js/main.js"></script>
+  <script type="module" src="./assets/i18n/init.js"></script>
+</body>
+</html>

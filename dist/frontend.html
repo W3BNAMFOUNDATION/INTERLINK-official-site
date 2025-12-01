@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERLINK™ — Web Panel Architecture</title>
+  <link rel="icon" href="public/brand/logo.svg">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+  <link rel="stylesheet" href="./assets/i18n/i18n.css">
+</head>
+<body>
+  <main class="wrapper">
+    <section class="section hero">
+      <div>
+        <p class="tagline">Frontend-Core</p>
+        <h1 class="headline">INTERLINK™ Web Panel — lightweight, modern, enterprise-ready.</h1>
+        <p class="subhead">The official browser interface for agents, memory search, ingest pipelines, automation, live logs, and system status. Built for GitHub Pages, local installs, and air-gapped deployments.</p>
+        <div class="badges">
+          <span class="badge">Real-time WebSocket streaming</span>
+          <span class="badge">Responsive, dark-mode UI</span>
+          <span class="badge">Single-page navigation</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>At-a-glance</h3>
+        <ul class="checklist">
+          <li><span class="check">✓</span> Unified control plane across chat, ingest, memory, and automation</li>
+          <li><span class="check">✓</span> Model selector for DeepSeek, Ollama, Groq, and OpenAI</li>
+          <li><span class="check">✓</span> Token-aware streaming UI with live status</li>
+          <li><span class="check">✓</span> Works online, offline, or in sovereign enterprise networks</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="grid-2">
+        <div>
+          <h2>🎯 Purpose</h2>
+          <p>The Web Panel is the primary touchpoint for every INTERLINK™ module. It brings AI messaging, memory visualization, ingestion, automation, and health dashboards into one cohesive workspace.</p>
+          <ul class="checklist">
+            <li><span class="check">•</span> Unified interface for all system modules</li>
+            <li><span class="check">•</span> Real-time feedback loops via REST + WebSocket</li>
+            <li><span class="check">•</span> Optimized for observability, speed, and reliability</li>
+            <li><span class="check">•</span> Designed for GitHub Pages, localhost, or offline deployments</li>
+          </ul>
+        </div>
+        <div>
+          <h2>🧱 Architecture</h2>
+          <p class="small">Simple, flat structure to keep the panel lightweight and auditable.</p>
+          <pre><code>frontend/
+  index.html
+  assets/
+  pages/
+  css/
+  js/</code></pre>
+          <p class="small">Assets include the 3D logo, shared styles, and per-page modules for navigation, chat, and streaming.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid-2">
+      <div class="panel">
+        <h2>🔌 Communication Layer</h2>
+        <p>REST endpoints handle mutations while WebSockets deliver live responses and event streams.</p>
+        <div class="grid-2">
+          <div>
+            <h3>REST API</h3>
+            <ul class="checklist">
+              <li><span class="check">•</span> POST <code>/api/send</code></li>
+              <li><span class="check">•</span> POST <code>/api/ingest</code></li>
+              <li><span class="check">•</span> POST <code>/api/memory</code></li>
+            </ul>
+          </div>
+          <div>
+            <h3>WebSocket</h3>
+            <ul class="checklist">
+              <li><span class="check">•</span> <code>ws://localhost:8000/ws</code></li>
+              <li><span class="check">•</span> Universal message format from Router-Core</li>
+              <li><span class="check">•</span> Connection + disconnect lifecycle helpers</li>
+              <li><span class="check">•</span> Event streaming for chat, ingest, and logs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>✨ Feature Panels</h2>
+        <div class="cards">
+          <div>
+            <h3>AI Chat Interface</h3>
+            <p>Left-aligned conversation history with right-rail model selector and live token counter.</p>
+          </div>
+          <div>
+            <h3>File Ingest</h3>
+            <p>Drag-and-drop uploader for PDFs, text, and URLs with real-time progress logs.</p>
+          </div>
+          <div>
+            <h3>Memory Search</h3>
+            <p>Semantic search with rich result previews and quick links to embeddings.</p>
+          </div>
+          <div>
+            <h3>Automation</h3>
+            <p>Trigger background tasks, monitor logs, and manage workspace permissions.</p>
+          </div>
+          <div>
+            <h3>System Dashboard</h3>
+            <p>Health checks, storage usage, workspace browser, and error monitor in one view.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid-2">
+      <div class="panel">
+        <h2>🎨 Design Language</h2>
+        <p>Dark-mode, enterprise aesthetic with smooth transitions and responsive layouts.</p>
+        <ul class="checklist">
+          <li><span class="check">•</span> Background <code>#0A0A0A</code>, text <code>#FFFFFF</code>, accent <code>#3FEAFF</code></li>
+          <li><span class="check">•</span> Rounded corners and focus states for every control</li>
+          <li><span class="check">•</span> Animated 3D logo (only animation in the UI)</li>
+          <li><span class="check">•</span> Mobile-first responsiveness across all panels</li>
+          <li><span class="check">•</span> No WebGL dependencies for reliability</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>💻 Script Layer</h2>
+        <div class="grid-2">
+          <div>
+            <h3>/js/app.js</h3>
+            <p>Handles model selection, sending messages, receiving streaming responses, and updating the UI.</p>
+          </div>
+          <div>
+            <h3>/js/websocket.js</h3>
+            <p>Manages WebSocket lifecycle, connection states, and resilient reconnects.</p>
+          </div>
+          <div>
+            <h3>/js/router.js</h3>
+            <p>Enables single-page navigation and smooth transitions between panels.</p>
+          </div>
+          <div>
+            <h3>Message Format</h3>
+            <p>All payloads follow the Router-Core universal schema, keeping agents, ingest, and memory consistent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="grid-3">
+        <div>
+          <h3>🧩 Page Structure</h3>
+          <p>Core entry points include hero, features, invest, and contact pages, each backed by shared assets.</p>
+          <ul class="checklist">
+            <li><span class="check">•</span> Hero landing with animated logo + Start Session CTA</li>
+            <li><span class="check">•</span> Modular pages inside <code>/pages</code></li>
+            <li><span class="check">•</span> Shared styles in <code>/css/style.css</code></li>
+          </ul>
+        </div>
+        <div>
+          <h3>🚦 Operations</h3>
+          <p>Production-ready for GitHub Pages, local installs, and isolated enterprise environments with no external dependencies.</p>
+          <ul class="checklist">
+            <li><span class="check">•</span> Works offline with bundled assets</li>
+            <li><span class="check">•</span> Compatible with air-gapped sovereign deployments</li>
+            <li><span class="check">•</span> Simple static hosting footprint</li>
+          </ul>
+        </div>
+        <div>
+          <h3>🏁 Summary</h3>
+          <p>Frontend-Core keeps INTERLINK™ operable from any browser: clean, fast, responsive, and modular with full WebSocket streaming.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/scripts/ui.js"></script>
+  <script src="public/assets/js/main.js"></script>
+  <script type="module" src="./assets/i18n/init.js"></script>
+</body>
+</html>
