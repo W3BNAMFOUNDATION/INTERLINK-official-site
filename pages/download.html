@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>INTERLINK — Download</title>
   <link rel="stylesheet" href="../assets/styles/style.css" />
+  <link rel="stylesheet" href="/assets/i18n/i18n.css">
 </head>
 
 <body>
@@ -26,6 +27,24 @@
     <a href="../pages/architecture.html">Architecture</a>
     <a href="../pages/support.html">Support</a>
     <a href="../pages/contact.html">Contact</a>
+    <div class="lang-switch">
+      <select id="langSelect" onchange="
+    localStorage.setItem('lang', this.value);
+    location.reload();
+  ">
+        <option value="en">🇺🇸 EN</option>
+        <option value="pt">🇧🇷 PT</option>
+        <option value="es">🇪🇸 ES</option>
+        <option value="fr">🇫🇷 FR</option>
+        <option value="ar">🇸🇦 AR</option>
+        <option value="zh">🇨🇳 ZH</option>
+        <option value="ko">🇰🇷 KO</option>
+        <option value="ja">🇯🇵 JA</option>
+        <option value="de">🇩🇪 DE</option>
+        <option value="hi">🇮🇳 HI</option>
+        <option value="ru">🇷🇺 RU</option>
+      </select>
+    </div>
   </nav>
 </header>
 
@@ -66,5 +85,25 @@
 </section>
 
 <script src="../assets/scripts/ui.js"></script>
+<script type="module">
+  import { loadLang, applyTranslations } from "/assets/i18n/loader.js";
+
+  function detectLang() {
+    const saved = localStorage.getItem("lang");
+    if (saved) return saved;
+    const browser = navigator.language.split("-")[0];
+    return ["en","pt","es","fr","ar","zh","ko","ja","de","hi","ru"].includes(browser)
+      ? browser
+      : "en";
+  }
+
+  async function start() {
+    const lang = detectLang();
+    const dict = await loadLang(lang);
+    applyTranslations(dict);
+  }
+
+  start();
+</script>
 </body>
 </html>
