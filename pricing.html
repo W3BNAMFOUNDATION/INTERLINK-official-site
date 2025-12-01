@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTERLINK™ — Pricing</title>
     <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/i18n/i18n.css">
 </head>
 
 <body>
@@ -71,5 +72,25 @@
 
 <script src="assets/scripts/ui.js"></script>
 <script src="assets/scripts/script.js"></script>
+<script type="module">
+  import { loadLang, applyTranslations } from "/assets/i18n/loader.js";
+
+  function detectLang() {
+    const saved = localStorage.getItem("lang");
+    if (saved) return saved;
+    const browser = navigator.language.split("-")[0];
+    return ["en","pt","es","fr","ar","zh","ko","ja","de","hi","ru"].includes(browser)
+      ? browser
+      : "en";
+  }
+
+  async function start() {
+    const lang = detectLang();
+    const dict = await loadLang(lang);
+    applyTranslations(dict);
+  }
+
+  start();
+</script>
 </body>
 </html>

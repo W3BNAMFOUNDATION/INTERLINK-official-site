@@ -18,6 +18,24 @@
       <a data-nav href="demo.html">Demo</a>
       <a data-nav href="invest.html">Invest</a>
       <a data-nav href="contact.html">Contact</a>
+      <div class="lang-switch">
+        <select id="langSelect" onchange="
+    localStorage.setItem('lang', this.value);
+    location.reload();
+  ">
+          <option value="en">🇺🇸 EN</option>
+          <option value="pt">🇧🇷 PT</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="ar">🇸🇦 AR</option>
+          <option value="zh">🇨🇳 ZH</option>
+          <option value="ko">🇰🇷 KO</option>
+          <option value="ja">🇯🇵 JA</option>
+          <option value="de">🇩🇪 DE</option>
+          <option value="hi">🇮🇳 HI</option>
+          <option value="ru">🇷🇺 RU</option>
+        </select>
+      </div>
     </nav>
 
     <div class="nav-actions">
