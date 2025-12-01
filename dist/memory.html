@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERLINK™ — Memory Engine</title>
+  <link rel="icon" href="public/brand/logo.svg">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="./assets/i18n/i18n.css">
+  <link rel="stylesheet" href="public/assets/css/style.css">
+</head>
+<body>
+  <main class="wrapper">
+    <section class="section hero">
+      <div>
+        <p class="tagline">INTERLINK™ — Long-Term Vector Memory Engine</p>
+        <h1 class="headline">Sovereign, offline-ready memory for every agent, workflow, and ingest job.</h1>
+        <p class="subhead">The Memory Engine transforms text, files, transcripts, logs, and URLs into persistent semantic vectors stored entirely on your machine—no cloud required.</p>
+        <div class="badges">
+          <span class="badge">Offline-first</span>
+          <span class="badge">Semantic search</span>
+          <span class="badge">Federated recall</span>
+          <span class="badge">Local storage</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🧠 Purpose</h2>
+      <p>The Memory Engine is the sovereign hippocampus for INTERLINK™. It enables long-term knowledge retention, cross-agent shared understanding, fast semantic search, and offline operation so every module works from the same persistent context.</p>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Unified intelligence</h3>
+          <p>Agents, ingest workflows, file analysis, and automation modules all read and write to the same vector layer, ensuring continuity across conversations, jobs, and tenants.</p>
+        </div>
+        <div class="panel">
+          <h3>Built for sovereignty</h3>
+          <p>Runs locally with zero external requests. All embeddings, indexes, and metadata stay under your control for privacy-first deployments.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>📚 Memory Types</h2>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Text Memory</h3>
+          <p>Raw text, docs, logs, transcripts, and chat inputs captured as searchable semantic vectors.</p>
+        </div>
+        <div class="panel">
+          <h3>File Memory</h3>
+          <p>PDFs, TXT, MD, DOCX, and CSV files are chunked, embedded, and stored with source metadata.</p>
+        </div>
+        <div class="panel">
+          <h3>URL Memory</h3>
+          <p>Extracted web content, screenshots, and summaries remain discoverable even when offline.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Agent Memory</h3>
+          <p>Agents persist their reasoning traces, notes, and task outputs for continuity and collaboration.</p>
+        </div>
+        <div class="panel">
+          <h3>Knowledge Packs</h3>
+          <p>Modular bundles like “Blockchain Pack” or “Security Pack” can be imported and shared across teams.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🧩 Architecture Overview</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Ingest Pipeline</h3>
+          <p>Inputs from text, audio, PDFs, URLs, files, and system logs flow into the embedder, then into the local FAISS-compatible vector store.</p>
+        </div>
+        <div class="panel">
+          <h3>Embedders</h3>
+          <p>Use Ollama, DeepSeek, or Groq encoders—fully offline if desired—to generate high-quality embeddings with GPU acceleration.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Memory Shards</h3>
+          <p>Data is persisted to zero-dependency shards: <code>.jsonl</code> for text chunks, <code>.index</code> for binary vectors, and <code>.meta</code> for timestamps and metadata.</p>
+          <p class="small">All shards live at <code>/workspace/memory/</code> for portable, local-only storage.</p>
+        </div>
+        <div class="panel">
+          <h3>Retrieval & Recall</h3>
+          <p>Semantic search spans every shard with cosine similarity, multi-query expansion, and contextual re-ranking to keep answers accurate and fast.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🚀 Capabilities</h2>
+      <div class="grid-2">
+        <ul class="checklist">
+          <li><span class="check">•</span> Instant semantic search across agents, ingest jobs, and automations.</li>
+          <li><span class="check">•</span> Memory insertion for text, files, transcripts, logs, and URLs.</li>
+          <li><span class="check">•</span> Rich metadata: source file, timestamp, author, agent origin, and tags.</li>
+          <li><span class="check">•</span> Granular deletion down to individual chunk IDs.</li>
+        </ul>
+        <ul class="checklist">
+          <li><span class="check">•</span> Sharded storage scales to millions of vectors on consumer hardware.</li>
+          <li><span class="check">•</span> Automatic pruning and compaction to keep indexes lean.</li>
+          <li><span class="check">•</span> Snapshotting for reproducibility, rollback, and export.</li>
+          <li><span class="check">•</span> GPU-accelerated retrieval with cached hot paths.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🔐 Security & Sovereignty</h2>
+      <div class="grid-2">
+        <ul class="checklist">
+          <li><span class="check">•</span> Local-only operation—no external APIs or cloud telemetry.</li>
+          <li><span class="check">•</span> Sandboxed memory workers and isolated tenant partitions.</li>
+          <li><span class="check">•</span> Optional encryption for sensitive shards.</li>
+          <li><span class="check">•</span> Offline embeddings for sovereign and air-gapped deployments.</li>
+        </ul>
+        <div class="panel">
+          <h3>Compliance-ready</h3>
+          <p>Built for enterprises that need confidentiality without sacrificing performance. Keep data on-prem while preserving rapid recall and collaboration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🛰️ Multi-Agent Integration</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Agents</h3>
+          <p>Every agent can read, write, search, and tag knowledge, enabling federated cognition across conversations and tasks.</p>
+        </div>
+        <div class="panel">
+          <h3>Ingest & Automation</h3>
+          <p>Ingest pipelines and automation modules automatically persist their outputs with metadata, making routing and decisions context-aware.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Filesystem & Knowledge Packs</h3>
+          <p>Link files, triggers, and modular knowledge packs so new teams inherit relevant context instantly.</p>
+        </div>
+        <div class="panel">
+          <h3>Shared understanding</h3>
+          <p>Cross-agent memory ensures collaboration, continuity, and rapid handoffs between research, support, and production agents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🧪 Example Usage</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Add memory</h3>
+          <pre><code>memory.add_text("Interlink Sovereign Mode operates fully offline...")
+memory.add_file("docs/Whitepaper.pdf")</code></pre>
+        </div>
+        <div class="panel">
+          <h3>Search or reset</h3>
+          <pre><code>results = memory.search("vector ingest module")
+memory.delete(id="chunk_00214")
+memory.reset()</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <h2>🏁 Summary</h2>
+      <p>The INTERLINK™ Memory Engine is a sovereign, high-performance knowledge architecture that keeps every agent and automation in sync. It delivers persistent semantic recall, offline resilience, and cross-agent collaboration out of the box.</p>
+    </section>
+  </main>
+
+  <script src="assets/scripts/ui.js"></script>
+  <script src="public/assets/js/main.js"></script>
+  <script type="module" src="./assets/i18n/init.js"></script>
+</body>
+</html>
