@@ -16,10 +16,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build static bundle
+        run: python build.py
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
 
       - name: Deploy
         uses: actions/deploy-pages@v4
