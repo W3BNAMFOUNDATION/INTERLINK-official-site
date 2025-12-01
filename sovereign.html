@@ -7,7 +7,7 @@
   <link rel="icon" href="public/brand/logo.svg">
   <link rel="stylesheet" href="assets/styles/style.css">
   <link rel="stylesheet" href="public/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/i18n/i18n.css">
+  <link rel="stylesheet" href="./assets/i18n/i18n.css">
 </head>
 <body>
   <main class="wrapper">
@@ -190,25 +190,6 @@
 
   <script src="assets/scripts/ui.js"></script>
   <script src="public/assets/js/main.js"></script>
-  <script type="module">
-    import { loadLang, applyTranslations } from "/assets/i18n/loader.js";
-
-    function detectLang() {
-      const saved = localStorage.getItem("lang");
-      if (saved) return saved;
-      const browser = navigator.language.split("-")[0];
-      return ["en","pt","es","fr","ar","zh","ko","ja","de","hi","ru"].includes(browser)
-        ? browser
-        : "en";
-    }
-
-    async function start() {
-      const lang = detectLang();
-      const dict = await loadLang(lang);
-      applyTranslations(dict);
-    }
-
-    start();
-  </script>
+  <script type="module" src="./assets/i18n/init.js"></script>
 </body>
 </html>

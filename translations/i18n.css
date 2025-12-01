@@ -1,0 +1,7 @@
+.lang-switch select {
+  background: #0c0f14;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #1f2630;
+}
